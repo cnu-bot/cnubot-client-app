@@ -16,11 +16,16 @@ class HomeController extends GetxController {
   @override
   void onInit() async {
     super.onInit();
-
+    loadShuttle();
     shuttleTab = ShuttleTab();
     libraryTab = LibraryTab();
     moreTab = MoreTab();
     restaurantTab = RestaurantTab();
+  }
+
+  Future<void> loadShuttle() async {
+    final shuttleInfo = await apiRepository.getShuttles();
+    print(shuttleInfo);
   }
 
   void switchTab(index) {
