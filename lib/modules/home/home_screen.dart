@@ -5,6 +5,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class HomeScreen extends GetView<HomeController> {
+  const HomeScreen({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return WillPopScope(
@@ -20,33 +22,17 @@ class HomeScreen extends GetView<HomeController> {
       ),
       bottomNavigationBar: BottomNavigationBar(
         items: [
-          _buildNavigationBarItem(
-              "셔틀",
-              MainTabs.shuttle == controller.currentTab.value
-                  ? const Icon(Icons.abc)
-                  : const Icon(Icons.abc)),
-          _buildNavigationBarItem(
-              "도서관",
-              MainTabs.shuttle == controller.currentTab.value
-                  ? const Icon(Icons.abc)
-                  : const Icon(Icons.abc)),
-          _buildNavigationBarItem(
-              "식당",
-              MainTabs.shuttle == controller.currentTab.value
-                  ? const Icon(Icons.abc)
-                  : const Icon(Icons.abc)),
-          _buildNavigationBarItem(
-              "더보기",
-              MainTabs.shuttle == controller.currentTab.value
-                  ? const Icon(Icons.abc)
-                  : const Icon(Icons.abc)),
+          _buildNavigationBarItem("셔틀", const Icon(Icons.airport_shuttle)),
+          _buildNavigationBarItem("도서관", const Icon(Icons.book)),
+          _buildNavigationBarItem("식당", const Icon(Icons.food_bank)),
+          _buildNavigationBarItem("더보기", const Icon(Icons.menu))
         ],
         type: BottomNavigationBarType.fixed,
         unselectedItemColor: Colors.black,
         currentIndex: controller.getCurrentIndex(controller.currentTab.value),
-        selectedItemColor: Colors.red,
+        selectedItemColor: Colors.blue,
         selectedLabelStyle: const TextStyle(
-          fontSize: 14,
+          fontSize: 12,
           fontWeight: FontWeight.bold,
         ),
         onTap: (index) => controller.switchTab(index),
