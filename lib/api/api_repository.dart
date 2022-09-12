@@ -11,4 +11,9 @@ class ApiRepository {
     final res = await apiProvider.getShuttles('/app/shuttle/home');
     return res.body;
   }
+
+  Future<List<dynamic>> getShuttleImages() async {
+    final res = await apiProvider.getShuttleImages('/app/shuttle/image');
+    return res.body;
+  }
 }

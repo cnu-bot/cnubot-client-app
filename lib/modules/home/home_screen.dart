@@ -25,7 +25,8 @@ class HomeScreen extends GetView<HomeController> {
         title: Text(MENUS[controller.currentTabIndex.value]),
       ),
       body: Padding(
-        padding: EdgeInsets.only(top: AppLayout.getScreenHeight() * 0.05),
+        padding:
+            EdgeInsets.symmetric(vertical: AppLayout.getScreenHeight() * 0.03),
         child: Center(
           child: _buildContent(controller.currentTab.value),
         ),

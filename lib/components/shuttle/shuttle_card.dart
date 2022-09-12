@@ -1,14 +1,21 @@
+import 'package:cnubot_app/components/common/full_screen_image.dart';
 import 'package:cnubot_app/shared/constants/font.dart';
 import 'package:cnubot_app/shared/constants/layout.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:get/get.dart';
 
 class ShuttleCard extends StatelessWidget {
   final String info;
+  final String rootImage;
   final int index;
 
-  const ShuttleCard({Key? key, required this.info, required this.index})
+  const ShuttleCard(
+      {Key? key,
+      required this.info,
+      required this.index,
+      required this.rootImage})
       : super(key: key);
 
   String titleGenerator(int index) {
@@ -51,7 +58,16 @@ class ShuttleCard extends StatelessWidget {
                   info,
                   textAlign: TextAlign.center,
                 ),
-              )
+              ),
+              TextButton(
+                  onPressed: () {
+                    Get.to(() => FullScreenImage(
+                        imageUrl: rootImage, tag: titleGenerator(index)));
+                  },
+                  child: const Text(
+                    "노선표 보기",
+                    style: TextStyle(fontWeight: FontWeight.bold),
+                  ))
             ],
           )),
     );
