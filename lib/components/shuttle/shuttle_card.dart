@@ -38,17 +38,18 @@ class ShuttleCard extends StatelessWidget {
     return Card(
       elevation: 4,
       child: SizedBox(
-          width: AppLayout.getScreenWidth() * 0.9,
+          width: AppLayout.getScreenWidth() * 0.95,
           child: Column(
             children: [
               Container(
+                padding: const EdgeInsets.symmetric(vertical: 5.0),
                 width: double.infinity,
                 color: Colors.blue,
                 child: Text(
                   titleGenerator(index),
                   textAlign: TextAlign.center,
                   style:
-                      FontStyles.headLineStyle2.copyWith(color: Colors.white),
+                      FontStyles.headLineStyle3.copyWith(color: Colors.white),
                 ),
               ),
               Padding(

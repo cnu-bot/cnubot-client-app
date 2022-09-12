@@ -8,15 +8,30 @@ class ShuttleTab extends GetView<HomeController> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Obx(
-        () => SingleChildScrollView(
-          child: Column(
-              children: List.generate(
-                  controller.shuttleInfo.length,
-                  (index) => ShuttleCard(
-                        info: controller.shuttleInfo[index],
-                        index: index,
-                        rootImage: controller.shuttleImageInfo[index],
-                      )).toList()),
+        () => Column(
+          crossAxisAlignment: CrossAxisAlignment.end,
+          children: [
+            Padding(
+              padding: const EdgeInsets.only(bottom: 8.0),
+              child: InkWell(
+                  child: const Icon(Icons.refresh),
+                  onTap: () {
+                    controller.loadShuttle();
+                  }),
+            ),
+            Expanded(
+              child: SingleChildScrollView(
+                child: Column(
+                    children: List.generate(
+                        controller.shuttleInfo.length,
+                        (index) => ShuttleCard(
+                              info: controller.shuttleInfo[index],
+                              index: index,
+                              rootImage: controller.shuttleImageInfo[index],
+                            )).toList()),
+              ),
+            ),
+          ],
         ),
       ),
     );
