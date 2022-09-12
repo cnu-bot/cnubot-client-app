@@ -23,4 +23,14 @@ class ApiRepository {
     final res = await apiProvider.getLibrarySeats('/app/library/seats');
     return res.body;
   }
+
+  Future<Map<String, dynamic>> getLibraryTimes() async {
+    final res = await apiProvider.getLibraryTimes('/app/library/home');
+    return res.body;
+  }
+
+  Future<List<dynamic>> getLibraryImages() async {
+    final res = await apiProvider.getLibraryImages('/app/library/image');
+    return res.body;
+  }
 }

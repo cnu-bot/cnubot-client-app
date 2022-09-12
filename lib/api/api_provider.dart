@@ -15,4 +15,12 @@ class ApiProvider extends BaseProvider {
   Future<Response> getLibrarySeats(String path) {
     return get(path);
   }
+
+  Future<Response> getLibraryTimes(String path) {
+    return get(path);
+  }
+
+  Future<Response> getLibraryImages(String path) {
+    return get(path);
+  }
 }
