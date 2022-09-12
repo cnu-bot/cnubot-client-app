@@ -1,8 +1,11 @@
 import 'package:cnubot_app/modules/home/home_controller.dart';
 import 'package:cnubot_app/modules/home/tabs/tabs.dart';
+import 'package:cnubot_app/shared/constants/layout.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
+
+const List<String> MENUS = ["셔틀", "도서관", "식당", "더보기"];
 
 class HomeScreen extends GetView<HomeController> {
   const HomeScreen({Key? key}) : super(key: key);
@@ -17,15 +20,22 @@ class HomeScreen extends GetView<HomeController> {
 
   Widget _buildWidget() {
     return Scaffold(
-      body: Center(
-        child: _buildContent(controller.currentTab.value),
+      appBar: AppBar(
+        centerTitle: true,
+        title: Text(MENUS[controller.currentTabIndex.value]),
+      ),
+      body: Padding(
+        padding: EdgeInsets.only(top: AppLayout.getScreenHeight() * 0.05),
+        child: Center(
+          child: _buildContent(controller.currentTab.value),
+        ),
       ),
       bottomNavigationBar: BottomNavigationBar(
         items: [
-          _buildNavigationBarItem("셔틀", const Icon(Icons.airport_shuttle)),
-          _buildNavigationBarItem("도서관", const Icon(Icons.book)),
-          _buildNavigationBarItem("식당", const Icon(Icons.food_bank)),
-          _buildNavigationBarItem("더보기", const Icon(Icons.menu))
+          _buildNavigationBarItem(MENUS[0], const Icon(Icons.airport_shuttle)),
+          _buildNavigationBarItem(MENUS[1], const Icon(Icons.book)),
+          _buildNavigationBarItem(MENUS[2], const Icon(Icons.food_bank)),
+          _buildNavigationBarItem(MENUS[3], const Icon(Icons.menu))
         ],
         type: BottomNavigationBarType.fixed,
         unselectedItemColor: Colors.black,

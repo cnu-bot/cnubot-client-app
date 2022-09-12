@@ -1,12 +1,15 @@
 import 'package:cnubot_app/api/api_repository.dart';
 import 'package:cnubot_app/modules/home/tabs/tabs.dart';
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class HomeController extends GetxController {
   final ApiRepository apiRepository;
   HomeController({required this.apiRepository});
 
-  var currentTab = MainTabs.shuttle.obs;
+  Rx<MainTabs> currentTab = MainTabs.shuttle.obs;
+  Rx<int> currentTabIndex = 0.obs;
+  RxList<dynamic> shuttleInfo = [].obs;
 
   late ShuttleTab shuttleTab;
   late LibraryTab libraryTab;
@@ -24,12 +27,13 @@ class HomeController extends GetxController {
   }
 
   Future<void> loadShuttle() async {
-    final shuttleInfo = await apiRepository.getShuttles();
-    print(shuttleInfo);
+    final _shuttleInfo = await apiRepository.getShuttles();
+    shuttleInfo(_shuttleInfo);
   }
 
   void switchTab(index) {
     var tab = _getCurrentTab(index);
+    currentTabIndex.value = index;
     currentTab.value = tab;
   }
 
