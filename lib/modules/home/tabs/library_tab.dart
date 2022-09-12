@@ -1,5 +1,4 @@
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:carousel_slider/carousel_slider.dart';
 import 'package:cnubot_app/components/common/full_screen_image.dart';
 import 'package:cnubot_app/components/library/library_card.dart';
 import 'package:cnubot_app/modules/home/home_controller.dart';
