@@ -7,6 +7,7 @@ class ApiRepository {
 
   final ApiProvider apiProvider;
 
+  // shuttle
   Future<List<dynamic>> getShuttles() async {
     final res = await apiProvider.getShuttles('/app/shuttle/home');
     return res.body;
@@ -14,6 +15,12 @@ class ApiRepository {
 
   Future<List<dynamic>> getShuttleImages() async {
     final res = await apiProvider.getShuttleImages('/app/shuttle/image');
+    return res.body;
+  }
+
+  // library
+  Future<Map<String, dynamic>> getLibrarySeats() async {
+    final res = await apiProvider.getLibrarySeats('/app/library/seats');
     return res.body;
   }
 }

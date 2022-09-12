@@ -9,8 +9,11 @@ class HomeController extends GetxController {
 
   Rx<MainTabs> currentTab = MainTabs.shuttle.obs;
   Rx<int> currentTabIndex = 0.obs;
+
+  // data
   RxList<dynamic> shuttleInfo = [].obs;
   RxList<dynamic> shuttleImageInfo = [].obs;
+  RxMap<dynamic, dynamic> librarySeats = {}.obs;
 
   late ShuttleTab shuttleTab;
   late LibraryTab libraryTab;
@@ -22,12 +25,14 @@ class HomeController extends GetxController {
     super.onInit();
     loadShuttle();
     loadShuttleImage();
+    loadLibrarySeats();
     shuttleTab = ShuttleTab();
     libraryTab = LibraryTab();
     moreTab = MoreTab();
     restaurantTab = RestaurantTab();
   }
 
+  // shuttle
   Future<void> loadShuttle() async {
     final _shuttleInfo = await apiRepository.getShuttles();
     shuttleInfo(_shuttleInfo);
@@ -36,6 +41,13 @@ class HomeController extends GetxController {
   Future<void> loadShuttleImage() async {
     final _shuttleImages = await apiRepository.getShuttleImages();
     shuttleImageInfo(_shuttleImages);
+  }
+
+  // library
+
+  Future<void> loadLibrarySeats() async {
+    final _librarySeats = await apiRepository.getLibrarySeats();
+    librarySeats(_librarySeats);
   }
 
   void switchTab(index) {
