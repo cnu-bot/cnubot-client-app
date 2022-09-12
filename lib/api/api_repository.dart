@@ -33,4 +33,10 @@ class ApiRepository {
     final res = await apiProvider.getLibraryImages('/app/library/image');
     return res.body;
   }
+
+  // restaurant
+  Future<Map<String, dynamic>> getRestaurantTimes() async {
+    final res = await apiProvider.getRestaurantTimes('/app/cafeteria/home');
+    return res.body;
+  }
 }

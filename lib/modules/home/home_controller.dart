@@ -13,9 +13,12 @@ class HomeController extends GetxController {
   // data
   RxList<dynamic> shuttleInfo = [].obs;
   RxList<dynamic> shuttleImageInfo = [].obs;
+
   RxMap<dynamic, dynamic> librarySeats = {}.obs;
   RxMap<dynamic, dynamic> libraryTimes = {}.obs;
   RxList<dynamic> libraryImages = [].obs;
+
+  RxMap<dynamic, dynamic> restaurantTimes = {}.obs;
 
   late ShuttleTab shuttleTab;
   late LibraryTab libraryTab;
@@ -30,6 +33,7 @@ class HomeController extends GetxController {
     loadLibrarySeats();
     loadLibraryTimes();
     loadLibraryImages();
+    loadRestaurantTimes();
     shuttleTab = ShuttleTab();
     libraryTab = LibraryTab();
     moreTab = MoreTab();
@@ -62,6 +66,12 @@ class HomeController extends GetxController {
   Future<void> loadLibraryImages() async {
     final _libraryImages = await apiRepository.getLibraryImages();
     libraryImages(_libraryImages);
+  }
+
+  // restaurant
+  Future<void> loadRestaurantTimes() async {
+    final _restaurantTimes = await apiRepository.getRestaurantTimes();
+    restaurantTimes(_restaurantTimes);
   }
 
   void switchTab(index) {

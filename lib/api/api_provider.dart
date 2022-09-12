@@ -23,4 +23,9 @@ class ApiProvider extends BaseProvider {
   Future<Response> getLibraryImages(String path) {
     return get(path);
   }
+
+  // restaurant
+  Future<Response> getRestaurantTimes(String path) {
+    return get(path);
+  }
 }
