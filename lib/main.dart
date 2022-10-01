@@ -1,12 +1,13 @@
-import 'package:cnubot_app/app_binding.dart';
-import 'package:cnubot_app/routes/app_pages.dart';
+import 'package:cnubot_app/app/0_routes/app_pages.dart';
+import 'package:cnubot_app/app/1_data/3_environment/environment.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
-void main() {
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  await EnvironmentConstants.setEnvironment();
   runApp(const MyApp());
 }
 
@@ -24,8 +25,7 @@ class MyApp extends StatelessWidget {
         return GetMaterialApp(
           debugShowCheckedModeBanner: false,
           title: 'cnubot',
-          initialRoute: Routes.HOME,
-          initialBinding: AppBinding(),
+          initialRoute: Routes.home,
           getPages: AppPages.routes,
           theme: ThemeData(
             primarySwatch: Colors.blue,
