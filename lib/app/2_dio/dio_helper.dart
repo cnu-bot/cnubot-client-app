@@ -1,10 +1,10 @@
 import 'dart:async';
 import 'package:alice/alice.dart';
-import 'package:cnubot_app/app/2_dio/constants_dio.dart';
+import 'package:cnubot_app/app/1_data/3_environment/environment.dart';
+import 'package:cnubot_app/app/2_dio/constant_dio.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 
-import '../1_data/3_environment/environment.dart';
 import '0_interceptor/logging_interceptor.dart';
 
 class DioHelper {
@@ -14,10 +14,10 @@ class DioHelper {
   DioHelper() {
     alice = Alice(showNotification: false);
     var options = BaseOptions(
-        receiveTimeout: ConstantsDio.timeout,
-        connectTimeout: ConstantsDio.timeout);
+        receiveTimeout: ConstantDio.timeout,
+        connectTimeout: ConstantDio.timeout);
 
-    options.baseUrl = EnvironmentConstants.config ?? 'test';
+    options.baseUrl = EnvironmentConstant.config ?? 'test';
     dio = Dio(
       options,
     );

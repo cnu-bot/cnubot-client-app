@@ -1,6 +1,5 @@
 import 'package:cnubot_app/app/1_data/0_model/shuttle_model.dart';
-
-import '../../2_dio/dio_helper.dart';
+import 'package:cnubot_app/app/2_dio/dio_helper.dart';
 
 class ShuttleProvider {
   final DioHelper dioHelper;

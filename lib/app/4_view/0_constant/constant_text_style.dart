@@ -1,4 +1,4 @@
-import 'package:cnubot_app/app/4_view/0_constant/constant_colors.dart';
+import 'package:cnubot_app/app/4_view/0_constant/constant_color.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 

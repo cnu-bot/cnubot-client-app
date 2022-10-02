@@ -7,7 +7,7 @@ import 'package:get/get.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await EnvironmentConstants.setEnvironment();
+  await EnvironmentConstant.setEnvironment();
   runApp(const MyApp());
 }
 
@@ -25,7 +25,7 @@ class MyApp extends StatelessWidget {
         return GetMaterialApp(
           debugShowCheckedModeBanner: false,
           title: 'cnubot',
-          initialRoute: Routes.home,
+          initialRoute: AppPages.initial,
           getPages: AppPages.routes,
           theme: ThemeData(
             primarySwatch: Colors.blue,

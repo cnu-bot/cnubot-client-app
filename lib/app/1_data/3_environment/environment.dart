@@ -2,7 +2,7 @@ import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 enum Environment { dev, staging, prod }
 
-class EnvironmentConstants {
+class EnvironmentConstant {
   static String? config;
 
   static Future<void> setEnvironment() async {
