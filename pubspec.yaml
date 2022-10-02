@@ -14,7 +14,6 @@ dependencies:
   cupertino_icons: ^1.0.2
   freezed_annotation: ^2.1.0
   json_annotation: ^4.6.0
-  http: ^0.13.5
   get: ^4.6.5
   url_launcher: ^6.1.5
   cached_network_image: ^3.2.1
@@ -29,7 +28,10 @@ dependencies:
   hive: ^2.2.3
   hive_flutter: ^1.1.0
   flutter_launcher_icons: ^0.10.0
-
+  dio: ^4.0.6
+  font_awesome_flutter: ^10.2.1
+  alice: ^0.2.5
+  
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -41,6 +43,8 @@ dev_dependencies:
 flutter:
   uses-material-design: true
 
+  assets:
+    - assets/config/
   
   
   
