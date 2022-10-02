@@ -30,6 +30,14 @@ jobs:
         with:
           flutter-version: "3.0.5"
 
+      - name: make .env file
+        run: |
+          echo "mode=${{ secrets.MODE }}" >> .env
+          echo "mode=${{ secrets.DEVURL }}" >> .env
+          echo "mode=${{ secrets.STAGINGURL }}" >> .env
+          echo "mode=${{ secrets.PRODURL }}" >> .env
+          mv .env ./assets/config
+
       # Get flutter dependencies.
       - run: flutter pub get
 
