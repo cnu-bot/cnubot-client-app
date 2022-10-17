@@ -8,3 +8,9 @@ TextStyle kHeadline1 = TextStyle(
   color: kBlackColor,
   fontWeight: FontWeight.w500,
 );
+
+TextStyle kHeadline2 = TextStyle(
+  fontSize: 25.sp,
+  color: kWhiteColor,
+  fontWeight: FontWeight.w800,
+);
