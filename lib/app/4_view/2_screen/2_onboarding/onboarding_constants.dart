@@ -1,7 +1,9 @@
+import 'package:cnubot_app/app/0_routes/app_pages.dart';
 import 'package:cnubot_app/app/4_view/0_constant/constant_color.dart';
 import 'package:cnubot_app/app/4_view/0_constant/constant_text_style.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 
 List<Map<String, dynamic>> pageList = [
   {
@@ -55,20 +57,27 @@ List<Map<String, dynamic>> pageList = [
       alignment: Alignment.center,
       children: [
         Center(
-            child: Text("그렇다면\n츠누봇과 함께 해주세요!",
-                textAlign: TextAlign.center,
-                style: kHeadline2.copyWith(color: kPrimaryBlue))),
+          child: Text(
+            "그렇다면\n츠누봇과 함께 해주세요!",
+            textAlign: TextAlign.center,
+            style: kHeadline2.copyWith(color: kPrimaryBlue),
+          ),
+        ),
         Positioned(
             bottom: 95.h,
             child: SizedBox(
               width: 230.w,
               height: 44.h,
               child: ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                  Get.toNamed(Routes.notice);
+                },
                 style: ElevatedButton.styleFrom(
-                    primary: kPrimaryBlue,
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(100.sp))),
+                  backgroundColor: kPrimaryBlue,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(100.sp),
+                  ),
+                ),
                 child: Text(
                   "츠누봇 바로가기",
                   style:

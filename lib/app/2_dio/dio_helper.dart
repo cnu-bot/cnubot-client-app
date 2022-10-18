@@ -3,6 +3,7 @@ import 'package:alice/alice.dart';
 import 'package:cnubot_app/app/1_data/3_environment/environment.dart';
 import 'package:cnubot_app/app/2_dio/constant_dio.dart';
 import 'package:dio/dio.dart';
+import 'package:dio_cache_interceptor/dio_cache_interceptor.dart';
 import 'package:flutter/material.dart';
 
 import '0_interceptor/logging_interceptor.dart';
@@ -14,23 +15,26 @@ class DioHelper {
   DioHelper() {
     alice = Alice(showNotification: false);
     var options = BaseOptions(
-        receiveTimeout: ConstantDio.timeout,
-        connectTimeout: ConstantDio.timeout);
+      receiveTimeout: ConstantDio.timeout,
+      connectTimeout: ConstantDio.timeout,
+    );
 
     options.baseUrl = EnvironmentConstant.config ?? 'test';
     dio = Dio(
       options,
     );
     dio!.interceptors.add(LoggingInterceptors());
-    dio!.interceptors
-        .add(alice!.getDioInterceptor()); //displays logs in notification view
+    dio!.interceptors.add(alice!.getDioInterceptor());
+    dio!.interceptors.add(DioCacheInterceptor(options: dioCacheOptions));
   }
   Future<Map<String, dynamic>> get(String url,
-      {dynamic param, dynamic options}) async {
+      {dynamic param, bool? refresh}) async {
     var response = await dio!.get(
       url,
       queryParameters: param,
-      options: options,
+      options: refresh == true
+          ? dioCacheOptions.copyWith(policy: CachePolicy.refresh).toOptions()
+          : null,
     );
     return response.data as Map<String, dynamic>;
   }
@@ -65,15 +69,13 @@ class DioHelper {
   }
 }
 
-/// Api Response codes
-class DioResponseCode {
-  static const int success200 = 200;
-  static const int success201 = 201;
-  static const int error400 = 400;
-  static const int error499 = 499;
-  static const int error401 = 201;
-  static const int error404 = 201;
-  static const int error500 = 500;
-  static const int internetUnavailable = 999;
-  static const int unknown = 533;
-}
+CacheOptions dioCacheOptions = CacheOptions(
+  store: MemCacheStore(),
+  policy: CachePolicy.request,
+  hitCacheOnErrorExcept: [401, 403],
+  maxStale: const Duration(hours: 6),
+  priority: CachePriority.normal,
+  cipher: null,
+  keyBuilder: CacheOptions.defaultCacheKeyBuilder,
+  allowPostMethod: false,
+);
