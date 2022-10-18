@@ -12,3 +12,8 @@ const Color kSystemWarningColor = Color(0xFFFFD362);
 // Color Pallette
 const Color kPrimaryColor = Color(0xFFFFFFFF);
 const Color kSubColor = Color(0xFFFFFFFF);
+
+const Color kPrimaryBlue = Color(0xFF001E75);
+const Color kSecondaryBlue = Color(0xFF00299F);
+const Color kPrimaryGray = Color(0xFF6B6B6B);
+const Color kSecondaryGray = Color(0xFFEBEBEB);

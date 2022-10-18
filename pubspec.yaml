@@ -1,7 +1,7 @@
 name: cnubot_app
 description: A new Flutter project.
 
-publish_to: 'none' 
+publish_to: "none"
 
 version: 1.0.0+1
 
@@ -31,7 +31,7 @@ dependencies:
   dio: ^4.0.6
   font_awesome_flutter: ^10.2.1
   alice: ^0.2.5
-  
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -44,34 +44,5 @@ flutter:
   uses-material-design: true
 
   assets:
+    - assets/images/common/
     - assets/config/
-  
-  
-  
-  
-
-  
-  
-
-  
-  
-
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  

@@ -1,13 +1,20 @@
 import 'package:cnubot_app/app/4_view/2_screen/0_home/home_binding.dart';
 import 'package:cnubot_app/app/4_view/2_screen/0_home/home_screen.dart';
+import 'package:cnubot_app/app/4_view/2_screen/2_onboarding/onboarding_screen.dart';
 import 'package:get/get.dart';
 
 part 'app_routes.dart';
 
 class AppPages {
-  static const initial = Routes.home;
+  // hive 를 통해 제어 필요
+  static const initial = Routes.onboarding;
 
   static final routes = [
+    GetPage(
+      name: Routes.onboarding,
+      page: () => const OnboardingScreen(),
+      transition: Transition.noTransition,
+    ),
     GetPage(
       name: Routes.home,
       page: () => const HomeScreen(),

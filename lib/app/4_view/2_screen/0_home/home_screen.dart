@@ -1,4 +1,4 @@
-import 'package:cnubot_app/app/4_view/1_component/school_info.dart';
+import 'package:cnubot_app/app/4_view/1_component/school_info/school_info.dart';
 import 'package:cnubot_app/app/4_view/2_screen/0_home/home_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
