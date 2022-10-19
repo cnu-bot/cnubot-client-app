@@ -110,7 +110,7 @@ class NoticeScreen extends GetView<NoticeController> {
         ),
       ),
       bottomNavigationBar: SizedBox(
-        height: 87.h,
+        height: 70.h,
         child: BottomNavigationBar(
           type: BottomNavigationBarType.fixed,
           backgroundColor: kPrimaryBlue,
