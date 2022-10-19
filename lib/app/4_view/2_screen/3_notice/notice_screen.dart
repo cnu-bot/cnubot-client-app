@@ -6,6 +6,7 @@ import 'package:cnubot_app/app/4_view/1_component/1_layout/header/go_to_home_but
 import 'package:cnubot_app/app/4_view/1_component/1_layout/header/top_circle.dart';
 import 'package:cnubot_app/app/4_view/1_component/1_layout/header/top_logo.dart';
 import 'package:cnubot_app/app/4_view/1_component/1_layout/header/top_text.dart';
+import 'package:cnubot_app/app/4_view/1_component/1_layout/nav/nav_item.dart';
 import 'package:cnubot_app/app/4_view/2_screen/3_notice/component/board_listview.dart';
 import 'package:cnubot_app/app/4_view/2_screen/3_notice/component/international_hq_list_view.dart';
 import 'package:cnubot_app/app/4_view/2_screen/3_notice/component/notice_card.dart';
@@ -148,34 +149,6 @@ class NoticeScreen extends GetView<NoticeController> {
             label: '열람실',
           ),
         ],
-      ),
-    );
-  }
-}
-
-class NavItem extends StatelessWidget {
-  const NavItem({
-    Key? key,
-    required this.assetName,
-    required this.selected,
-  }) : super(key: key);
-  final String assetName;
-  final bool selected;
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      width: 35.w,
-      height: 35.w,
-      margin: EdgeInsets.fromLTRB(0, 0, 0, 4.h),
-      decoration: BoxDecoration(
-        color: selected ? kSecondaryBlue : kNavBackground,
-        shape: BoxShape.circle,
-      ),
-      child: SvgPicture.asset(
-        "assets/images/common/nav_$assetName.svg",
-        height: 14.17.h,
-        fit: BoxFit.scaleDown,
-        color: selected ? kWhiteColor : kNavAlphabetColor,
       ),
     );
   }
