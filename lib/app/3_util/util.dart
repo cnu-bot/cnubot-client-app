@@ -1,6 +1,4 @@
-import 'package:cnubot_app/app/0_routes/app_pages.dart';
 import 'package:cnubot_app/app/3_util/dialog_util.dart';
-import 'package:get/get.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 Future<void> launchWeblink(String inputUrl) async {

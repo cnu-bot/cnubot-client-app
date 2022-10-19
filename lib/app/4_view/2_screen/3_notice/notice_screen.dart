@@ -14,7 +14,6 @@ import 'package:cnubot_app/app/4_view/2_screen/3_notice/component/white_horse_sq
 import 'package:cnubot_app/app/4_view/2_screen/3_notice/notice_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 
 class NoticeScreen extends GetView<NoticeController> {
