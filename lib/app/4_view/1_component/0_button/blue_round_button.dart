@@ -16,7 +16,7 @@ class BlueRoundButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.fromLTRB(8.w, 13.h, 8.w, 13.h),
+      padding: EdgeInsets.fromLTRB(13.w, 7.h, 13.w, 7.h),
       margin: EdgeInsets.fromLTRB(0, 0, 6.w, 0),
       decoration: BoxDecoration(
         color: isSelected ? kBlue00299F : kSecondaryGray,

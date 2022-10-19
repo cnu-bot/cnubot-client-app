@@ -10,7 +10,6 @@ part 'app_routes.dart';
 class AppPages {
   // hive 를 통해 제어 필요
   static const initial = Routes.onboarding;
-  // static const initial = Routes.notice;
 
   static final routes = [
     GetPage(

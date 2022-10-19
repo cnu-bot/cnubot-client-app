@@ -76,3 +76,10 @@ TextStyle kBody4 = TextStyle(
   fontSize: 10.sp,
   color: kGray7B,
 );
+
+// 바텀 네비게이션
+TextStyle kNavLabel = TextStyle(
+  fontWeight: FontWeight.w600,
+  fontSize: 9.sp,
+  color: kWhiteColor,
+);

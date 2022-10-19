@@ -1,3 +1,6 @@
+import 'package:cnubot_app/app/3_util/util.dart';
+import 'package:cnubot_app/app/4_view/0_constant/constant_color.dart';
+import 'package:cnubot_app/app/4_view/0_constant/constant_text_style.dart';
 import 'package:cnubot_app/app/4_view/0_constant/enum/board_type.dart';
 import 'package:cnubot_app/app/4_view/1_component/1_layout/header/go_to_home_button.dart';
 import 'package:cnubot_app/app/4_view/1_component/1_layout/header/top_circle.dart';
@@ -10,6 +13,7 @@ import 'package:cnubot_app/app/4_view/2_screen/3_notice/component/white_horse_sq
 import 'package:cnubot_app/app/4_view/2_screen/3_notice/notice_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 
 class NoticeScreen extends GetView<NoticeController> {
@@ -104,6 +108,74 @@ class NoticeScreen extends GetView<NoticeController> {
             ),
           ],
         ),
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        type: BottomNavigationBarType.fixed,
+        backgroundColor: kPrimaryBlue,
+        currentIndex: 0,
+        onTap: navigationMove,
+        selectedItemColor: kWhiteColor,
+        unselectedItemColor: kWhiteColor,
+        selectedLabelStyle: kNavLabel,
+        unselectedLabelStyle: kNavLabel,
+        items: const [
+          BottomNavigationBarItem(
+            icon: NavItem(
+              assetName: 'N',
+              selected: true,
+            ),
+            label: '뉴스',
+          ),
+          BottomNavigationBarItem(
+            icon: NavItem(
+              assetName: 'M',
+              selected: false,
+            ),
+            label: '학교',
+          ),
+          BottomNavigationBarItem(
+            icon: NavItem(
+              assetName: 'T',
+              selected: false,
+            ),
+            label: '교통',
+          ),
+          BottomNavigationBarItem(
+            icon: NavItem(
+              assetName: 'L',
+              selected: false,
+            ),
+            label: '열람실',
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class NavItem extends StatelessWidget {
+  const NavItem({
+    Key? key,
+    required this.assetName,
+    required this.selected,
+  }) : super(key: key);
+  final String assetName;
+  final bool selected;
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: 35.w,
+      height: 35.w,
+      margin: EdgeInsets.fromLTRB(0, 0, 0, 4.h),
+      decoration: BoxDecoration(
+        color: selected ? kSecondaryBlue : kNavBackground,
+        shape: BoxShape.circle,
+      ),
+      child: SvgPicture.asset(
+        "assets/images/common/nav_$assetName.svg",
+        height: 14.17.h,
+        fit: BoxFit.scaleDown,
+        color: selected ? kWhiteColor : kNavAlphabetColor,
       ),
     );
   }
