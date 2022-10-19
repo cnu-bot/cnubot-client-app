@@ -14,8 +14,8 @@ class NavItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 35.w,
-      height: 35.w,
+      width: 35.h,
+      height: 35.h,
       margin: EdgeInsets.fromLTRB(0, 0, 0, 4.h),
       decoration: BoxDecoration(
         color: selected ? kSecondaryBlue : kNavBackground,
