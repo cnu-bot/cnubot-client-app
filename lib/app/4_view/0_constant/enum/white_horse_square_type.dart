@@ -1,4 +1,3 @@
-
 enum WhiteHorseSquareType {
   news('새소식'),
   academicInformation('학사정보'),
