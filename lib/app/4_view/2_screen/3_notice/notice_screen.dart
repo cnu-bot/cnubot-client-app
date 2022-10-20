@@ -106,9 +106,6 @@ class NoticeScreen extends GetView<NoticeController> {
           ],
         ),
       ),
-      bottomNavigationBar: const BottomNavBar(
-        currentIndex: 0,
-      ),
     );
   }
 }
