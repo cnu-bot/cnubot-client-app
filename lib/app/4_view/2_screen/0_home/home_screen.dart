@@ -14,6 +14,7 @@ class HomeScreen extends GetView<HomeController> {
       ),
       // body: Text('hello world'),
       body: Container(),
+      
     );
   }
 }
