@@ -73,7 +73,7 @@ List<Map<String, dynamic>> pageList = [
                   Get.toNamed(Routes.notice);
                 },
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: kPrimaryBlue,
+                  primary: kPrimaryBlue,
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(100.sp),
                   ),
