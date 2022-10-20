@@ -1,5 +1,3 @@
-import 'package:cnubot_app/app/3_util/dialog_util.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 
 void navigationMove(int index) {
