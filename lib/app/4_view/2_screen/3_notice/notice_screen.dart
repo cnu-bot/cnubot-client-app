@@ -123,28 +123,28 @@ class NoticeScreen extends GetView<NoticeController> {
           items: const [
             BottomNavigationBarItem(
               icon: NavItem(
-                assetName: 'N',
+                assetName: 'n',
                 selected: true,
               ),
               label: '뉴스',
             ),
             BottomNavigationBarItem(
               icon: NavItem(
-                assetName: 'M',
+                assetName: 'm',
                 selected: false,
               ),
               label: '학교',
             ),
             BottomNavigationBarItem(
               icon: NavItem(
-                assetName: 'T',
+                assetName: 't',
                 selected: false,
               ),
               label: '교통',
             ),
             BottomNavigationBarItem(
               icon: NavItem(
-                assetName: 'L',
+                assetName: 'l',
                 selected: false,
               ),
               label: '열람실',
