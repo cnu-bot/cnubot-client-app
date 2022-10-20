@@ -71,11 +71,6 @@ class DioHelper {
 
 CacheOptions dioCacheOptions = CacheOptions(
   store: MemCacheStore(),
-  policy: CachePolicy.request,
   hitCacheOnErrorExcept: [401, 403],
   maxStale: const Duration(hours: 6),
-  priority: CachePriority.normal,
-  cipher: null,
-  keyBuilder: CacheOptions.defaultCacheKeyBuilder,
-  allowPostMethod: false,
 );
