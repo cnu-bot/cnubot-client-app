@@ -1,5 +1,3 @@
-
-
 void navigationMove(int index) {
   if (index == 0) {
     // Get.offAllNamed(Routes.calendarMonth);
