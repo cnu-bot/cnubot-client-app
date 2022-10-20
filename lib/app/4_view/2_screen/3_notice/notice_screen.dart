@@ -109,48 +109,45 @@ class NoticeScreen extends GetView<NoticeController> {
           ],
         ),
       ),
-      bottomNavigationBar: SizedBox(
-        height: 70.h,
-        child: BottomNavigationBar(
-          type: BottomNavigationBarType.fixed,
-          backgroundColor: kPrimaryBlue,
-          currentIndex: 0,
-          onTap: navigationMove,
-          selectedItemColor: kWhiteColor,
-          unselectedItemColor: kWhiteColor,
-          selectedLabelStyle: kNavLabel,
-          unselectedLabelStyle: kNavLabel,
-          items: const [
-            BottomNavigationBarItem(
-              icon: NavItem(
-                assetName: 'n',
-                selected: true,
-              ),
-              label: '뉴스',
+      bottomNavigationBar: BottomNavigationBar(
+        type: BottomNavigationBarType.fixed,
+        backgroundColor: kPrimaryBlue,
+        currentIndex: 0,
+        onTap: navigationMove,
+        selectedItemColor: kWhiteColor,
+        unselectedItemColor: kWhiteColor,
+        selectedLabelStyle: kNavLabel,
+        unselectedLabelStyle: kNavLabel,
+        items: const [
+          BottomNavigationBarItem(
+            icon: NavItem(
+              assetName: 'n',
+              selected: true,
             ),
-            BottomNavigationBarItem(
-              icon: NavItem(
-                assetName: 'm',
-                selected: false,
-              ),
-              label: '학교',
+            label: '뉴스',
+          ),
+          BottomNavigationBarItem(
+            icon: NavItem(
+              assetName: 'm',
+              selected: false,
             ),
-            BottomNavigationBarItem(
-              icon: NavItem(
-                assetName: 't',
-                selected: false,
-              ),
-              label: '교통',
+            label: '학교',
+          ),
+          BottomNavigationBarItem(
+            icon: NavItem(
+              assetName: 't',
+              selected: false,
             ),
-            BottomNavigationBarItem(
-              icon: NavItem(
-                assetName: 'l',
-                selected: false,
-              ),
-              label: '열람실',
+            label: '교통',
+          ),
+          BottomNavigationBarItem(
+            icon: NavItem(
+              assetName: 'l',
+              selected: false,
             ),
-          ],
-        ),
+            label: '열람실',
+          ),
+        ],
       ),
     );
   }

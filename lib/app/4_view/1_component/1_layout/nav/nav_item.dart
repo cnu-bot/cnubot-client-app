@@ -16,7 +16,7 @@ class NavItem extends StatelessWidget {
     return Container(
       width: 35.h,
       height: 35.h,
-      margin: EdgeInsets.fromLTRB(0, 0, 0, 4.h),
+      margin: EdgeInsets.fromLTRB(0, 10.h, 0, 4.h),
       decoration: BoxDecoration(
         color: selected ? kSecondaryBlue : kNavBackground,
         shape: BoxShape.circle,
