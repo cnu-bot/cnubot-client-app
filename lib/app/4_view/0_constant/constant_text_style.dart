@@ -29,22 +29,11 @@ TextStyle kHeadline4 = TextStyle(
   color: kWhiteColor,
 );
 
-TextStyle kHeadline4Gray = TextStyle(
-  fontWeight: FontWeight.w600,
-  fontSize: 14.sp,
-  color: kGray6B,
-);
-
 // 새소식, 학사정보, ...
 TextStyle kHeadline5 = TextStyle(
   fontWeight: FontWeight.w600,
   fontSize: 12.sp,
-  color: kBlue213B85,
-);
-TextStyle kHeadline5Op = TextStyle(
-  fontWeight: FontWeight.w600,
-  fontSize: 12.sp,
-  color: const Color(0xff9BA6C4),
+  color: kBlue21,
 );
 
 // 게시글 - 작성자

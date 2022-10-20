@@ -13,7 +13,7 @@ class TopLogo extends StatelessWidget {
       child: Image(
         width: 57.w,
         height: 47.h,
-        image: const AssetImage('assets/images/common/logo_CNB.png'),
+        image: const AssetImage('assets/images/common/cnb_logo.png'),
       ),
     );
   }

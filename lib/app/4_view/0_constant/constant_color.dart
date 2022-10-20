@@ -21,9 +21,9 @@ const Color kSecondaryGray = Color(0xFFEBEBEB);
 const Color kGray6B = Color(0xFF6B6B6B);
 const Color kGray7B = Color(0xFF7B7B7B);
 
-const Color kBlue00299F = Color(0xFF00299F);
-const Color kBlue233D87 = Color(0xFF233D87);
-const Color kBlue213B85 = Color(0xFF213B85);
+const Color kBlue00 = Color(0xFF00299F);
+const Color kBlue23 = Color(0xFF233D87);
+const Color kBlue21 = Color(0xFF213B85);
 
 const Color kNavBackground = Color(0xFFCCD2E3);
 const Color kNavAlphabetColor = Color(0xFF0037BF);

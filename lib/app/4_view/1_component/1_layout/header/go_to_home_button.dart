@@ -19,7 +19,7 @@ class GoToHomeButton extends StatelessWidget {
         child: Image(
           width: 65.w,
           height: 65.h,
-          image: const AssetImage('assets/images/common/memoji_home.png'),
+          image: const AssetImage('assets/images/common/memoji02.png'),
         ),
       ),
     );

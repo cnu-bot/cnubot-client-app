@@ -24,7 +24,9 @@ class GrayRoundButton extends StatelessWidget {
       ),
       child: Text(
         text,
-        style: isSelected ? kHeadline5 : kHeadline5Op,
+        style: isSelected
+            ? kHeadline5
+            : kHeadline5.copyWith(color: const Color(0xff9BA6C4)),
       ),
     );
   }

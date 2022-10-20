@@ -1,4 +1,4 @@
-import 'package:cnubot_app/app/3_util/util.dart';
+import 'package:cnubot_app/app/3_util/navigate_util.dart';
 import 'package:cnubot_app/app/4_view/0_constant/constant_color.dart';
 import 'package:cnubot_app/app/4_view/0_constant/constant_text_style.dart';
 import 'package:cnubot_app/app/4_view/0_constant/enum/board_type.dart';
