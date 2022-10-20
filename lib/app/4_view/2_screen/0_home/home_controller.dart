@@ -1,4 +1,5 @@
 import 'package:cnubot_app/app/1_data/2_repository/shuttle_repository.dart';
+import 'package:cnubot_app/app/4_view/0_constant/enum/nav_page_type.dart';
 import 'package:get/get.dart';
 
 class HomeController extends GetxController {
@@ -6,10 +7,14 @@ class HomeController extends GetxController {
 
   HomeController({required this.repository});
 
-  RxInt currentIndex = 0.obs;
+  Rx<NavPage> currentPage = NavPage.notice.obs;
 
   @override
   void onInit() async {
     super.onInit();
+  }
+
+  updateCurrentPage(int index) {
+    currentPage.value = NavPage.getByIndex(index);
   }
 }

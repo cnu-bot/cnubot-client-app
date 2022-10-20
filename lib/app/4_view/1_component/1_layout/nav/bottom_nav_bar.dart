@@ -1,56 +1,57 @@
-import 'package:cnubot_app/app/3_util/navigate_util.dart';
 import 'package:cnubot_app/app/4_view/0_constant/constant_color.dart';
 import 'package:cnubot_app/app/4_view/0_constant/constant_text_style.dart';
-import 'package:cnubot_app/app/4_view/0_constant/route_name.dart';
+import 'package:cnubot_app/app/4_view/0_constant/enum/nav_page_type.dart';
 import 'package:cnubot_app/app/4_view/1_component/1_layout/nav/nav_item.dart';
 import 'package:flutter/material.dart';
 
 class BottomNavBar extends StatelessWidget {
   const BottomNavBar({
     Key? key,
-    required this.currentIndex,
+    required this.currentPage,
+    required this.updateCurrentPage,
   }) : super(key: key);
 
-  final int currentIndex;
+  final NavPage currentPage;
+  final void Function(int)? updateCurrentPage;
   @override
   Widget build(BuildContext context) {
     return BottomNavigationBar(
       type: BottomNavigationBarType.fixed,
       backgroundColor: kPrimaryBlue,
-      currentIndex: currentIndex,
-      onTap: navigationMove,
+      currentIndex: currentPage.index,
+      onTap: updateCurrentPage,
       selectedItemColor: kWhiteColor,
       unselectedItemColor: kWhiteColor,
       selectedLabelStyle: kNavLabel,
       unselectedLabelStyle: kNavLabel,
       items: [
         BottomNavigationBarItem(
-          icon: const NavItem(
+          icon: NavItem(
             assetName: 'n',
-            selected: true,
+            selected: currentPage.index == 0 ? true : false,
           ),
-          label: RouteName.values[currentIndex].displayName,
+          label: NavPage.notice.displayName,
         ),
         BottomNavigationBarItem(
-          icon: const NavItem(
+          icon: NavItem(
             assetName: 'm',
-            selected: false,
+            selected: currentPage.index == 1 ? true : false,
           ),
-          label: RouteName.values[currentIndex].displayName,
+          label: NavPage.food.displayName,
         ),
         BottomNavigationBarItem(
-          icon: const NavItem(
+          icon: NavItem(
             assetName: 't',
-            selected: false,
+            selected: currentPage.index == 2 ? true : false,
           ),
-          label: RouteName.values[currentIndex].displayName,
+          label: NavPage.bus.displayName,
         ),
         BottomNavigationBarItem(
-          icon: const NavItem(
+          icon: NavItem(
             assetName: 'l',
-            selected: false,
+            selected: currentPage.index == 3 ? true : false,
           ),
-          label: RouteName.values[currentIndex].displayName,
+          label: NavPage.library.displayName,
         ),
       ],
     );
