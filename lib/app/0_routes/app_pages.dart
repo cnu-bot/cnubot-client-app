@@ -15,18 +15,18 @@ class AppPages {
     GetPage(
       name: Routes.onboarding,
       page: () => const OnboardingScreen(),
-      transition: Transition.noTransition,
+      transition: Transition.cupertino,
     ),
     GetPage(
       name: Routes.home,
       page: () => const HomeScreen(),
-      transition: Transition.noTransition,
+      transition: Transition.cupertino,
       binding: HomeBinding(),
     ),
     GetPage(
       name: Routes.search,
       page: () => const SearchScreen(),
-      transition: Transition.noTransition,
+      transition: Transition.cupertino,
     ),
   ];
 }

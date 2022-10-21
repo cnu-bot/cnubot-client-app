@@ -1,12 +1,9 @@
-import 'package:cnubot_app/app/0_routes/app_pages.dart';
 import 'package:cnubot_app/app/4_view/0_constant/constant_color.dart';
-import 'package:cnubot_app/app/4_view/0_constant/constant_text_style.dart';
 import 'package:cnubot_app/app/4_view/0_constant/enum/nav_page_type.dart';
 import 'package:cnubot_app/app/4_view/1_component/1_layout/header/top_logo.dart';
 import 'package:cnubot_app/app/4_view/2_screen/4_search/component/menu_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/svg.dart';
 
 class SearchScreen extends StatelessWidget {
   const SearchScreen({Key? key}) : super(key: key);
