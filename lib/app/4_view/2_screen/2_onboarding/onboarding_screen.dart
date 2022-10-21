@@ -1,4 +1,4 @@
-import 'package:cnubot_app/app/4_view/1_component/onboarding/full_page_container.dart';
+import 'package:cnubot_app/app/4_view/2_screen/2_onboarding/component/full_page_container.dart';
 import 'package:cnubot_app/app/4_view/2_screen/2_onboarding/onboarding_constants.dart';
 import 'package:flutter/material.dart';
 
