@@ -9,7 +9,6 @@ class HomeController extends GetxController {
 
   Rx<NavPage> currentPage = NavPage.notice.obs;
 
-
   updateCurrentPage(int index) {
     currentPage.value = NavPage.getByIndex(index);
   }
