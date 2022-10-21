@@ -72,3 +72,10 @@ TextStyle kNavLabel = TextStyle(
   fontSize: 9.sp,
   color: kWhiteColor,
 );
+
+// 검색 페이지 메뉴 텍스트
+TextStyle kSearchLabel = TextStyle(
+  fontWeight: FontWeight.w800,
+  fontSize: 18.sp,
+  color: kThirdBlue,
+);

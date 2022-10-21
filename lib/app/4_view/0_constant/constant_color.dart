@@ -15,6 +15,7 @@ const Color kSubColor = Color(0xFFFFFFFF);
 
 const Color kPrimaryBlue = Color(0xFF001E75);
 const Color kSecondaryBlue = Color(0xFF00299F);
+const Color kThirdBlue = Color(0xFF004098);
 const Color kPrimaryGray = Color(0xFF6B6B6B);
 const Color kSecondaryGray = Color(0xFFEBEBEB);
 
