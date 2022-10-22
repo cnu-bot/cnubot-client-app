@@ -1,3 +1,4 @@
+import 'package:cnubot_app/app/0_routes/app_pages.dart';
 import 'package:cnubot_app/app/4_view/0_constant/constant_color.dart';
 import 'package:cnubot_app/app/4_view/0_constant/enum/nav_page_type.dart';
 import 'package:cnubot_app/app/4_view/1_component/1_layout/header/top_logo.dart';
@@ -6,6 +7,7 @@ import 'package:cnubot_app/app/4_view/2_screen/4_search/component/icon_button.da
 import 'package:cnubot_app/app/4_view/2_screen/4_search/component/menu_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 
 class SearchScreen extends StatelessWidget {
   const SearchScreen({Key? key}) : super(key: key);
@@ -51,7 +53,11 @@ class SearchScreen extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   CircleIconButton(icon: Icons.more_horiz, onTap: () {}),
-                  CircleIconButton(icon: Icons.search, onTap: () {}),
+                  CircleIconButton(
+                      icon: Icons.search,
+                      onTap: () {
+                        Get.toNamed(Routes.searchDetail);
+                      }),
                 ],
               ),
               SizedBox(

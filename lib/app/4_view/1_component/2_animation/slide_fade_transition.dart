@@ -6,7 +6,7 @@ class SlideFadeTransition extends StatefulWidget {
       required this.child,
       this.offset = -1,
       this.curve = Curves.bounceInOut,
-      this.animationDuration = const Duration(milliseconds: 2000)})
+      this.animationDuration = const Duration(milliseconds: 3000)})
       : super(key: key);
 
   final Widget child;
