@@ -11,9 +11,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
-/* 이 부분에서 만약 NoticeController 이외에 다른 컨트롤러도 사용할 필요가 있을때 
-다수의 컨트롤러를 어떻게 사용하는지 궁금합니다!*/
-
 class SearchDetailScreen extends StatefulWidget {
   const SearchDetailScreen({Key? key}) : super(key: key);
 
@@ -44,7 +41,7 @@ class _SearchDetailScreenState extends State<SearchDetailScreen> {
                     // ignore: prefer_const_constructors
                     children: [
                       const TopText(text: "바로가기"),
-                      ShortcutListView(),
+                      const ShortcutListView(),
                       SizedBox(
                         height: 33.h,
                       ),
@@ -63,8 +60,8 @@ class _SearchDetailScreenState extends State<SearchDetailScreen> {
                         child: TextField(
                           autofocus: true,
                           decoration: InputDecoration(
-                              contentPadding: EdgeInsets.symmetric(
-                                  vertical: 10.0.h, horizontal: 16.0.w),
+                              contentPadding:
+                                  EdgeInsets.symmetric(horizontal: 16.0.w),
                               prefixIcon: const Icon(
                                 Icons.search,
                                 color: kPrimaryBlue,
