@@ -1,6 +1,8 @@
 import 'package:cnubot_app/app/4_view/0_constant/constant_color.dart';
 import 'package:cnubot_app/app/4_view/0_constant/enum/nav_page_type.dart';
 import 'package:cnubot_app/app/4_view/1_component/1_layout/header/top_logo.dart';
+import 'package:cnubot_app/app/4_view/1_component/2_animation/slide_fade_transition.dart';
+import 'package:cnubot_app/app/4_view/2_screen/4_search/component/icon_button.dart';
 import 'package:cnubot_app/app/4_view/2_screen/4_search/component/menu_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -13,25 +15,32 @@ class SearchScreen extends StatelessWidget {
     return Scaffold(
       body: Center(
         child: Column(crossAxisAlignment: CrossAxisAlignment.center, children: [
-          SizedBox(
-            height: 78.h,
-          ),
-          Container(
-            width: 131.h,
-            height: 131.h,
-            padding: EdgeInsets.fromLTRB(0, 0, 0, 15.h),
-            decoration: const BoxDecoration(
-                shape: BoxShape.circle, color: kPrimaryBlue),
-            child: Image(
-              width: 12.w,
-              height: 12.h,
-              image: const AssetImage('assets/images/common/memoji01.png'),
+          SlideFadeTransition(
+            child: Column(
+              children: [
+                SizedBox(
+                  height: 78.h,
+                ),
+                Container(
+                  width: 131.h,
+                  height: 131.h,
+                  padding: EdgeInsets.fromLTRB(0, 0, 0, 15.h),
+                  decoration: const BoxDecoration(
+                      shape: BoxShape.circle, color: kPrimaryBlue),
+                  child: Image(
+                    width: 12.w,
+                    height: 12.h,
+                    image:
+                        const AssetImage('assets/images/common/memoji01.png'),
+                  ),
+                ),
+                SizedBox(
+                  height: 10.h,
+                ),
+                const TopLogo(),
+              ],
             ),
           ),
-          SizedBox(
-            height: 10.h,
-          ),
-          const TopLogo(),
           SizedBox(
             height: 120.h,
           ),
@@ -41,30 +50,8 @@ class SearchScreen extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  InkWell(
-                    onTap: () {},
-                    child: Container(
-                      padding: const EdgeInsets.all(8.0),
-                      decoration: const BoxDecoration(
-                          shape: BoxShape.circle, color: kSecondaryGray),
-                      child: const Icon(
-                        Icons.more_horiz,
-                        color: kPrimaryBlue,
-                      ),
-                    ),
-                  ),
-                  InkWell(
-                    onTap: () {},
-                    child: Container(
-                      padding: const EdgeInsets.all(8.0),
-                      decoration: const BoxDecoration(
-                          shape: BoxShape.circle, color: kSecondaryGray),
-                      child: const Icon(
-                        Icons.search,
-                        color: kPrimaryBlue,
-                      ),
-                    ),
-                  ),
+                  CircleIconButton(icon: Icons.more_horiz, onTap: () {}),
+                  CircleIconButton(icon: Icons.search, onTap: () {}),
                 ],
               ),
               SizedBox(

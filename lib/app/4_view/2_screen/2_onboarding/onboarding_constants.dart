@@ -1,7 +1,6 @@
 import 'package:cnubot_app/app/0_routes/app_pages.dart';
 import 'package:cnubot_app/app/4_view/0_constant/constant_color.dart';
 import 'package:cnubot_app/app/4_view/0_constant/constant_text_style.dart';
-import 'package:cnubot_app/app/4_view/0_constant/enum/nav_page_type.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
@@ -71,7 +70,7 @@ List<Map<String, dynamic>> pageList = [
               height: 44.h,
               child: ElevatedButton(
                 onPressed: () {
-                  Get.toNamed('${Routes.home}?page=${NavPage.notice.name}');
+                  Get.toNamed(Routes.search);
                 },
                 style: ElevatedButton.styleFrom(
                   // ignore: deprecated_member_use
