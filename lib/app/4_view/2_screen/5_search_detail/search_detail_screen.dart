@@ -59,29 +59,30 @@ class _SearchDetailScreenState extends State<SearchDetailScreen> {
                         child: TextField(
                           autofocus: true,
                           decoration: InputDecoration(
-                              contentPadding:
-                                  EdgeInsets.symmetric(horizontal: 16.0.w),
-                              prefixIcon: const Icon(
-                                Icons.search,
-                                color: kPrimaryBlue,
+                            contentPadding:
+                                EdgeInsets.symmetric(horizontal: 16.0.w),
+                            prefixIcon: const Icon(
+                              Icons.search,
+                              color: kPrimaryBlue,
+                            ),
+                            suffix: Text(
+                              "취소",
+                              style: TextStyle(
+                                  color: const Color(0xFF828282),
+                                  fontSize: 14.sp),
+                            ),
+                            hintText: "검색",
+                            hintStyle: kSearchLabel,
+                            filled: true,
+                            fillColor: kSecondaryGray,
+                            border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(100.r),
+                              borderSide: const BorderSide(
+                                width: 0,
+                                style: BorderStyle.none,
                               ),
-                              suffix: Text(
-                                "취소",
-                                style: TextStyle(
-                                    color: const Color(0xFF828282),
-                                    fontSize: 14.sp),
-                              ),
-                              hintText: "검색",
-                              hintStyle: kSearchLabel,
-                              filled: true,
-                              fillColor: kSecondaryGray,
-                              border: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(100.r),
-                                borderSide: const BorderSide(
-                                  width: 0,
-                                  style: BorderStyle.none,
-                                ),
-                              )),
+                            ),
+                          ),
                         ),
                       )
                     ],
