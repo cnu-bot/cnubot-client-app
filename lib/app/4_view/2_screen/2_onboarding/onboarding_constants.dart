@@ -76,7 +76,7 @@ List<Map<String, dynamic>> pageList = [
                   // ignore: deprecated_member_use
                   primary: kPrimaryBlue,
                   shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(100.sp),
+                    borderRadius: BorderRadius.circular(100.r),
                   ),
                 ),
                 child: Text(

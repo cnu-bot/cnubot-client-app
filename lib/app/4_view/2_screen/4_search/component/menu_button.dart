@@ -22,7 +22,7 @@ class MenuButton extends StatelessWidget {
       child: Container(
         width: double.infinity,
         decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(100.w), color: kSecondaryGray),
+            borderRadius: BorderRadius.circular(100.r), color: kSecondaryGray),
         padding: EdgeInsets.symmetric(horizontal: 18.w, vertical: 6.h),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
