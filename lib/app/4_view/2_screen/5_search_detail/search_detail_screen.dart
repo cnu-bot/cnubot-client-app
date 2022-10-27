@@ -38,7 +38,6 @@ class _SearchDetailScreenState extends State<SearchDetailScreen> {
                 Container(
                   margin: EdgeInsets.fromLTRB(0.w, 142.h, 0, 0),
                   child: Column(
-                    // ignore: prefer_const_constructors
                     children: [
                       const TopText(text: "바로가기"),
                       const ShortcutListView(),
