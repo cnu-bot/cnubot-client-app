@@ -18,7 +18,6 @@ class MenuButton extends StatelessWidget {
     return InkWell(
       onTap: () {
         Get.toNamed("${Routes.home}?page=${navpage.name}");
-        // Get.toNamed(route);
       },
       child: Container(
         width: double.infinity,
