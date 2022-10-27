@@ -5,8 +5,10 @@ class NoticeProvider {
   final DioHelper dioHelper;
   NoticeProvider({required this.dioHelper});
 
-  Future<List<NoticeModel>> getNoticeModelList(Map<String, dynamic> paramMap,
-      {bool? refresh}) async {
+  Future<List<NoticeModel>> getNoticeModelList(
+    Map<String, dynamic> paramMap, {
+    bool? refresh,
+  }) async {
     final Map<String, dynamic> result = await dioHelper.get(
       '/board',
       param: paramMap,

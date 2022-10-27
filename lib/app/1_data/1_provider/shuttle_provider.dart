@@ -6,7 +6,8 @@ class ShuttleProvider {
   ShuttleProvider({required this.dioHelper});
 
   Future<List<ShuttleModel>> getShuttleModelList(
-      Map<String, dynamic> paramMap) async {
+    Map<String, dynamic> paramMap,
+  ) async {
     final Map<String, dynamic> result =
         await dioHelper.get('/api/user/college/list', param: paramMap);
     dioHelper.errorCheck(result, '셔틀 목록을 찾을 수 없습니다');

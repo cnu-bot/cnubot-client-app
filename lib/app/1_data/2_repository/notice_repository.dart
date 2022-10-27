@@ -5,8 +5,10 @@ class NoticeRepository {
   final NoticeProvider provider;
   NoticeRepository({required this.provider});
 
-  Future<List<NoticeModel>> getNoticeModelList(Map<String, dynamic> paramMap,
-      {bool? refresh}) async {
+  Future<List<NoticeModel>> getNoticeModelList(
+    Map<String, dynamic> paramMap, {
+    bool? refresh,
+  }) async {
     return provider.getNoticeModelList(
       paramMap,
       refresh: refresh,
