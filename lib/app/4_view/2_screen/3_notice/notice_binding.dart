@@ -3,7 +3,7 @@ import 'package:cnubot_app/app/1_data/2_repository/notice_repository.dart';
 import 'package:cnubot_app/app/2_dio/dio_helper.dart';
 import 'package:get/get.dart';
 
-import 'notice_controller.dart';
+import 'package:cnubot_app/app/4_view/2_screen/3_notice/notice_controller.dart';
 
 class NoticeBinding implements Bindings {
   @override

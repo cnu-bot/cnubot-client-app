@@ -63,19 +63,19 @@ class SearchScreen extends StatelessWidget {
               SizedBox(
                 height: 30.h,
               ),
-              const MenuButton(assetName: "n", navpage: NavPage.notice),
+              const MenuButton(assetName: 'n', navpage: NavPage.notice),
               SizedBox(
                 height: 20.h,
               ),
-              const MenuButton(assetName: "m", navpage: NavPage.food),
+              const MenuButton(assetName: 'm', navpage: NavPage.food),
               SizedBox(
                 height: 20.h,
               ),
-              const MenuButton(assetName: "t", navpage: NavPage.bus),
+              const MenuButton(assetName: 't', navpage: NavPage.bus),
               SizedBox(
                 height: 20.h,
               ),
-              const MenuButton(assetName: "l", navpage: NavPage.library),
+              const MenuButton(assetName: 'l', navpage: NavPage.library),
             ]),
           )
         ]),

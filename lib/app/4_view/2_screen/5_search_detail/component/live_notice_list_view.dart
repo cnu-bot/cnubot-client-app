@@ -30,7 +30,7 @@ class LiveNoticeListView extends StatelessWidget {
                     LiveNoticeMenuButton(noticeModel: noticeItem))
               ],
             ),
-          )
+          ),
         ],
       ),
     );

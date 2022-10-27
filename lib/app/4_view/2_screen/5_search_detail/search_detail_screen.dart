@@ -39,12 +39,12 @@ class _SearchDetailScreenState extends State<SearchDetailScreen> {
                   margin: EdgeInsets.fromLTRB(0.w, 142.h, 0, 0),
                   child: Column(
                     children: [
-                      const TopText(text: "바로가기"),
+                      const TopText(text: '바로가기'),
                       const ShortcutListView(),
                       SizedBox(
                         height: 33.h,
                       ),
-                      const TopText(text: "실시간 게시물"),
+                      const TopText(text: '실시간 게시물'),
                       Obx(() => noticeController.noticeModelList.isEmpty
                           ? const SizedBox.shrink()
                           : LiveNoticeListView(
@@ -66,12 +66,12 @@ class _SearchDetailScreenState extends State<SearchDetailScreen> {
                               color: kPrimaryBlue,
                             ),
                             suffix: Text(
-                              "취소",
+                              '취소',
                               style: TextStyle(
                                   color: const Color(0xFF828282),
                                   fontSize: 14.sp),
                             ),
-                            hintText: "검색",
+                            hintText: '검색',
                             hintStyle: kSearchLabel,
                             filled: true,
                             fillColor: kSecondaryGray,

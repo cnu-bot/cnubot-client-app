@@ -5,19 +5,21 @@ class NoticeProvider {
   final DioHelper dioHelper;
   NoticeProvider({required this.dioHelper});
 
-  Future<List<NoticeModel>> getNoticeModelList(Map<String, dynamic> paramMap,
-      {bool? refresh}) async {
-    Map<String, dynamic> result = await dioHelper.get(
+  Future<List<NoticeModel>> getNoticeModelList(
+    Map<String, dynamic> paramMap, {
+    bool? refresh,
+  }) async {
+    final Map<String, dynamic> result = await dioHelper.get(
       '/board',
       param: paramMap,
       refresh: refresh,
     );
     dioHelper.errorCheck(result, '소식을 찾을 수 없습니다');
-    List<dynamic> resultList = result['returnValue'];
-    List<NoticeModel> noticeModelList = [];
+    final List<dynamic> resultList = result['returnValue'];
+    final List<NoticeModel> noticeModelList = [];
 
     for (int i = 0; i < resultList.length; i++) {
-      NoticeModel noticeModel = NoticeModel.fromJson(resultList[i]);
+      final NoticeModel noticeModel = NoticeModel.fromJson(resultList[i]);
       noticeModelList.add(noticeModel);
     }
 
