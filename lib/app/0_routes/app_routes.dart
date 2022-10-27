@@ -4,10 +4,14 @@ abstract class _Paths {
   static const splash = '/';
   static const home = '/home';
   static const onboarding = '/onboarding';
+  static const search = '/search';
+  static const searchDetail = '/searchDetail';
 }
 
 abstract class Routes {
   static const splash = _Paths.splash;
   static const home = _Paths.home;
   static const onboarding = _Paths.onboarding;
+  static const search = _Paths.search;
+  static const searchDetail = _Paths.searchDetail;
 }

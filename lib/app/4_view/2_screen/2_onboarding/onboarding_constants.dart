@@ -1,7 +1,6 @@
 import 'package:cnubot_app/app/0_routes/app_pages.dart';
 import 'package:cnubot_app/app/4_view/0_constant/constant_color.dart';
 import 'package:cnubot_app/app/4_view/0_constant/constant_text_style.dart';
-import 'package:cnubot_app/app/4_view/0_constant/enum/nav_page_type.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
@@ -24,7 +23,7 @@ List<Map<String, dynamic>> pageList = [
           Image(
             width: 173.w,
             height: 173.h,
-            image: const AssetImage("assets/images/common/memoji01.png"),
+            image: const AssetImage('assets/images/common/memoji01.png'),
           )
         ],
       ),
@@ -35,7 +34,7 @@ List<Map<String, dynamic>> pageList = [
     'endColor': 0xFF0048AA,
     'child': Center(
       child: Text(
-        "츠누봇에서 여러 소식을\n받아보실 수 있습니다",
+        '츠누봇에서 여러 소식을\n받아보실 수 있습니다',
         style: kHeadline2,
         textAlign: TextAlign.center,
       ),
@@ -46,7 +45,7 @@ List<Map<String, dynamic>> pageList = [
     'endColor': 0xFF3568AC,
     'child': Center(
       child: Text(
-        "소식을 받아보시겠습니까?",
+        '소식을 받아보시겠습니까?',
         style: kHeadline2,
       ),
     )
@@ -59,7 +58,7 @@ List<Map<String, dynamic>> pageList = [
       children: [
         Center(
           child: Text(
-            "그렇다면\n츠누봇과 함께 해주세요!",
+            '그렇다면\n츠누봇과 함께 해주세요!',
             textAlign: TextAlign.center,
             style: kHeadline2.copyWith(color: kPrimaryBlue),
           ),
@@ -71,17 +70,17 @@ List<Map<String, dynamic>> pageList = [
               height: 44.h,
               child: ElevatedButton(
                 onPressed: () {
-                  Get.toNamed('${Routes.home}?page=${NavPage.notice.name}');
+                  Get.toNamed(Routes.search);
                 },
                 style: ElevatedButton.styleFrom(
                   // ignore: deprecated_member_use
                   primary: kPrimaryBlue,
                   shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(100.sp),
+                    borderRadius: BorderRadius.circular(100.r),
                   ),
                 ),
                 child: Text(
-                  "츠누봇 바로가기",
+                  '츠누봇 바로가기',
                   style:
                       TextStyle(fontWeight: FontWeight.w800, fontSize: 17.sp),
                 ),

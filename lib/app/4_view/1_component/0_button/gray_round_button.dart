@@ -6,7 +6,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 class GrayRoundButton extends StatelessWidget {
   const GrayRoundButton({
     Key? key,
-    required this.isSelected,
+    this.isSelected = true,
     required this.text,
   }) : super(key: key);
 
