@@ -17,7 +17,7 @@ class MenuButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-        Get.toNamed("${Routes.home}?page=${navpage.name}");
+        Get.toNamed('${Routes.home}?page=${navpage.name}');
       },
       child: Container(
         width: double.infinity,
@@ -34,7 +34,7 @@ class MenuButton extends StatelessWidget {
                 color: kWhiteColor.withOpacity(0.7),
               ),
               child: SvgPicture.asset(
-                "assets/images/search/${assetName}_icon.svg",
+                'assets/images/search/${assetName}_icon.svg',
                 height: 22.h,
               ),
             ),

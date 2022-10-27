@@ -22,7 +22,7 @@ class NavItem extends StatelessWidget {
         shape: BoxShape.circle,
       ),
       child: SvgPicture.asset(
-        "assets/images/common/nav_$assetName.svg",
+        'assets/images/common/nav_$assetName.svg',
         height: 14.17.h,
         fit: BoxFit.scaleDown,
         color: selected ? kWhiteColor : kNavAlphabetColor,

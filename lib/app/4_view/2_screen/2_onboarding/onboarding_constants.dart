@@ -23,7 +23,7 @@ List<Map<String, dynamic>> pageList = [
           Image(
             width: 173.w,
             height: 173.h,
-            image: const AssetImage("assets/images/common/memoji01.png"),
+            image: const AssetImage('assets/images/common/memoji01.png'),
           )
         ],
       ),
@@ -34,7 +34,7 @@ List<Map<String, dynamic>> pageList = [
     'endColor': 0xFF0048AA,
     'child': Center(
       child: Text(
-        "츠누봇에서 여러 소식을\n받아보실 수 있습니다",
+        '츠누봇에서 여러 소식을\n받아보실 수 있습니다',
         style: kHeadline2,
         textAlign: TextAlign.center,
       ),
@@ -45,7 +45,7 @@ List<Map<String, dynamic>> pageList = [
     'endColor': 0xFF3568AC,
     'child': Center(
       child: Text(
-        "소식을 받아보시겠습니까?",
+        '소식을 받아보시겠습니까?',
         style: kHeadline2,
       ),
     )
@@ -58,7 +58,7 @@ List<Map<String, dynamic>> pageList = [
       children: [
         Center(
           child: Text(
-            "그렇다면\n츠누봇과 함께 해주세요!",
+            '그렇다면\n츠누봇과 함께 해주세요!',
             textAlign: TextAlign.center,
             style: kHeadline2.copyWith(color: kPrimaryBlue),
           ),
@@ -80,7 +80,7 @@ List<Map<String, dynamic>> pageList = [
                   ),
                 ),
                 child: Text(
-                  "츠누봇 바로가기",
+                  '츠누봇 바로가기',
                   style:
                       TextStyle(fontWeight: FontWeight.w800, fontSize: 17.sp),
                 ),

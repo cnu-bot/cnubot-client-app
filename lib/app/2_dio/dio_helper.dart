@@ -6,7 +6,7 @@ import 'package:dio/dio.dart';
 import 'package:dio_cache_interceptor/dio_cache_interceptor.dart';
 import 'package:flutter/material.dart';
 
-import '0_interceptor/logging_interceptor.dart';
+import 'package:cnubot_app/app/2_dio/0_interceptor/logging_interceptor.dart';
 
 class DioHelper {
   Dio? dio;
@@ -14,7 +14,7 @@ class DioHelper {
 
   DioHelper() {
     alice = Alice(showNotification: false);
-    var options = BaseOptions(
+    final options = BaseOptions(
       receiveTimeout: ConstantDio.timeout,
       connectTimeout: ConstantDio.timeout,
     );
@@ -29,7 +29,7 @@ class DioHelper {
   }
   Future<Map<String, dynamic>> get(String url,
       {dynamic param, bool? refresh}) async {
-    var response = await dio!.get(
+    final response = await dio!.get(
       url,
       queryParameters: param,
       options: refresh == true
@@ -40,24 +40,24 @@ class DioHelper {
   }
 
   Future<Map<String, dynamic>> post(String url, dynamic body) async {
-    var response = await dio!.post(url, data: body);
+    final response = await dio!.post(url, data: body);
     return response.data as Map<String, dynamic>;
   }
 
   Future<Map<String, dynamic>> patch(String url, dynamic body) async {
-    var response = await dio!.patch(url, data: body);
+    final response = await dio!.patch(url, data: body);
     debugPrint('[Response] ${response.data.runtimeType} ${response.data}');
     return response.data as Map<String, dynamic>;
   }
 
   Future<Map<String, dynamic>> put(String url, dynamic body) async {
-    var response = await dio!.put(url, data: body);
+    final response = await dio!.put(url, data: body);
     debugPrint('[Response] ${response.data.runtimeType} ${response.data}');
     return response.data as Map<String, dynamic>;
   }
 
   Future<Map<String, dynamic>> delete(String url, dynamic body) async {
-    var response = await dio!.delete(url, data: body);
+    final response = await dio!.delete(url, data: body);
     debugPrint('[Response] ${response.data.runtimeType} ${response.data}');
     return response.data as Map<String, dynamic>;
   }

@@ -70,7 +70,7 @@ class NoticeController extends GetxController {
           writer: '대전/충남/세종지역 혁신 플랫폼 총괄 운영센터',
           viewCount: 3005,
           webLink:
-              "https://plus.cnu.ac.kr/_prog/_board/?mode=V&no=2488897&code=sub07_0701&site_dvs_cd=kr&menu_dvs_cd=0701&skey=&sval=&site_dvs=&ntt_tag=&GotoPage=",
+              'https://plus.cnu.ac.kr/_prog/_board/?mode=V&no=2488897&code=sub07_0701&site_dvs_cd=kr&menu_dvs_cd=0701&skey=&sval=&site_dvs=&ntt_tag=&GotoPage=',
           regDate: DateTime.now(),
         ));
       }

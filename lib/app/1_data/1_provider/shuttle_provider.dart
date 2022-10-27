@@ -7,14 +7,14 @@ class ShuttleProvider {
 
   Future<List<ShuttleModel>> getShuttleModelList(
       Map<String, dynamic> paramMap) async {
-    Map<String, dynamic> result =
+    final Map<String, dynamic> result =
         await dioHelper.get('/api/user/college/list', param: paramMap);
     dioHelper.errorCheck(result, '셔틀 목록을 찾을 수 없습니다');
-    List<dynamic> resultList = result['returnValue'];
-    List<ShuttleModel> shuttleModelList = [];
+    final List<dynamic> resultList = result['returnValue'];
+    final List<ShuttleModel> shuttleModelList = [];
 
     for (int i = 0; i < resultList.length; i++) {
-      ShuttleModel shuttleModel = ShuttleModel.fromJson(resultList[i]);
+      final ShuttleModel shuttleModel = ShuttleModel.fromJson(resultList[i]);
       shuttleModelList.add(shuttleModel);
     }
 

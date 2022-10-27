@@ -7,7 +7,7 @@ class EnvironmentConstant {
 
   static Future<void> setEnvironment() async {
     await dotenv.load(fileName: 'assets/config/.env');
-    String mode = dotenv.env['mode'] ?? '';
+    final String mode = dotenv.env['mode'] ?? '';
     switch (mode) {
       case 'dev':
         config = dotenv.env['devUrl'] ?? '';

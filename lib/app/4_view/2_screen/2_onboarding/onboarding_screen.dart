@@ -7,7 +7,7 @@ class OnboardingScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    PageController controller = PageController(initialPage: 0);
+    final PageController controller = PageController(initialPage: 0);
 
     return Scaffold(
         body: PageView(
