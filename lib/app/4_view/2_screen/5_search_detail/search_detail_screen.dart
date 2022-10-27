@@ -68,9 +68,7 @@ class _SearchDetailScreenState extends State<SearchDetailScreen> {
                               suffix: Text(
                                 "취소",
                                 style: TextStyle(
-                                    color: const Color(
-                                      0xFF828282,
-                                    ),
+                                    color: const Color(0xFF828282),
                                     fontSize: 14.sp),
                               ),
                               hintText: "검색",
