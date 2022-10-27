@@ -7,6 +7,7 @@ linter:
     require_trailing_comma: true
     always_use_package_imports: true
     prefer_final_locals: true
+    camel_case_types: true
 analyzer:
   errors:
     invalid_annotation_target: ignore
