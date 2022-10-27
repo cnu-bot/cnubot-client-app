@@ -6,8 +6,6 @@ linter:
     prefer_single_quotes: true
     require_trailing_comma: true
     always_use_package_imports: true
-    annotate_overrides: false
-    avoid_relative_lib_imports: false
     prefer_final_locals: true
 analyzer:
   errors:
