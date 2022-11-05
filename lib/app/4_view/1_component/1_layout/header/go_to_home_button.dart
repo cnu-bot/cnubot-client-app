@@ -9,18 +9,14 @@ class GoToHomeButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Positioned(
-      right: 0.w,
-      top: 32.h,
-      child: InkWell(
-        onTap: () {
-          Get.back();
-        },
-        child: Image(
-          width: 65.w,
-          height: 65.h,
-          image: const AssetImage('assets/images/common/memoji02.png'),
-        ),
+    return InkWell(
+      onTap: () {
+        Get.back();
+      },
+      child: Image(
+        width: 88.w,
+        height: 74.h,
+        image: const AssetImage('assets/images/common/button_home.png'),
       ),
     );
   }

@@ -8,13 +8,11 @@ class TopLogo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Positioned(
-      top: 64.h,
-      child: Image(
-        width: 57.w,
-        height: 47.h,
-        image: const AssetImage('assets/images/common/cnb_logo.png'),
-      ),
+    return Image(
+      width: 89.w,
+      height: 21.h,
+      fit: BoxFit.fitWidth,
+      image: const AssetImage('assets/images/common/cnb_logo.png'),
     );
   }
 }

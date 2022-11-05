@@ -54,7 +54,7 @@ class NoticeController extends GetxController {
       }
       noticeModelList.value = await repository.getNoticeModelList(
         {
-          'menu': menu,
+          'menuName': menu,
         },
         refresh: refresh,
       );

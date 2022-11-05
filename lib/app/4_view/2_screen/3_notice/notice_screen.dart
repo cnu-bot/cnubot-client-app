@@ -1,3 +1,4 @@
+import 'package:cnubot_app/app/4_view/0_constant/constant_color.dart';
 import 'package:cnubot_app/app/4_view/0_constant/enum/board_type.dart';
 import 'package:cnubot_app/app/4_view/1_component/1_layout/header/go_to_home_button.dart';
 import 'package:cnubot_app/app/4_view/1_component/1_layout/header/top_circle.dart';
@@ -37,9 +38,19 @@ class NoticeScreen extends GetView<NoticeController> {
                         clipBehavior: Clip.none,
                         alignment: Alignment.topCenter,
                         children: [
-                          const GoToHomeButton(),
-                          const TopCircle(),
-                          const TopLogo(),
+                          Positioned(
+                            right: -7.w,
+                            top: 37.h,
+                            child: const GoToHomeButton(),
+                          ),
+                          Positioned(
+                            top: -66.h,
+                            child: const TopCircle(),
+                          ),
+                          Positioned(
+                            top: 96.h,
+                            child: const TopLogo(),
+                          ),
                           Container(
                             margin: EdgeInsets.fromLTRB(0.w, 142.h, 0, 0),
                             child: Column(
@@ -86,7 +97,6 @@ class NoticeScreen extends GetView<NoticeController> {
                           physics: const NeverScrollableScrollPhysics(),
                           itemCount: controller.noticeModelList.length,
                           shrinkWrap: true,
-                          padding: EdgeInsets.fromLTRB(0, 31.h, 0, 0),
                           itemBuilder: (context, index) {
                             return NoticeCard(
                               noticeModel: controller.noticeModelList[index],

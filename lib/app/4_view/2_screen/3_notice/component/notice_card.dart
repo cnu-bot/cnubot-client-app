@@ -17,7 +17,7 @@ class NoticeCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-        launchWeblink(noticeModel.webLink);
+        launchWeblink(noticeModel.url);
       },
       child: Container(
         decoration: BoxDecoration(
@@ -40,14 +40,15 @@ class NoticeCard extends StatelessWidget {
               height: 7.h,
             ),
             Text(
-              noticeModel.title,
+              noticeModel.name,
               style: kBody2,
             ),
             SizedBox(
               height: 13.h,
             ),
             Text(
-              noticeModel.content,
+              maxLines: 6,
+              noticeModel.boardDetail,
               style: kBody3,
             ),
             SizedBox(
@@ -72,7 +73,7 @@ class NoticeCard extends StatelessWidget {
                       Transform.translate(
                         offset: Offset(0, 1.h),
                         child: Text(
-                          noticeModel.viewCount.toString(),
+                          noticeModel.hits,
                           style: kBody4,
                         ),
                       ),
@@ -80,7 +81,7 @@ class NoticeCard extends StatelessWidget {
                   ),
                 ),
                 Text(
-                  convertDatetimeToYYYYMMDD(noticeModel.regDate),
+                  noticeModel.date,
                   style: kBody4,
                 ),
               ],

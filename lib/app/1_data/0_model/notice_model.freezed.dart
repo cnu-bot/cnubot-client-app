@@ -21,12 +21,15 @@ NoticeModel _$NoticeModelFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$NoticeModel {
   int get id => throw _privateConstructorUsedError;
-  String get title => throw _privateConstructorUsedError;
-  String get content => throw _privateConstructorUsedError;
+  String get boardNum => throw _privateConstructorUsedError;
+  String get name => throw _privateConstructorUsedError;
+  String get boardDetail => throw _privateConstructorUsedError;
   String get writer => throw _privateConstructorUsedError;
-  int get viewCount => throw _privateConstructorUsedError;
-  String get webLink => throw _privateConstructorUsedError;
-  DateTime get regDate => throw _privateConstructorUsedError;
+  String get hits => throw _privateConstructorUsedError;
+  String get url => throw _privateConstructorUsedError;
+  String? get picUrl => throw _privateConstructorUsedError;
+  String? get period => throw _privateConstructorUsedError;
+  String get date => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -38,65 +41,87 @@ mixin _$NoticeModel {
 abstract class $NoticeModelCopyWith<$Res> {
   factory $NoticeModelCopyWith(
           NoticeModel value, $Res Function(NoticeModel) then) =
-      _$NoticeModelCopyWithImpl<$Res>;
+      _$NoticeModelCopyWithImpl<$Res, NoticeModel>;
+  @useResult
   $Res call(
       {int id,
-      String title,
-      String content,
+      String boardNum,
+      String name,
+      String boardDetail,
       String writer,
-      int viewCount,
-      String webLink,
-      DateTime regDate});
+      String hits,
+      String url,
+      String? picUrl,
+      String? period,
+      String date});
 }
 
 /// @nodoc
-class _$NoticeModelCopyWithImpl<$Res> implements $NoticeModelCopyWith<$Res> {
+class _$NoticeModelCopyWithImpl<$Res, $Val extends NoticeModel>
+    implements $NoticeModelCopyWith<$Res> {
   _$NoticeModelCopyWithImpl(this._value, this._then);
 
-  final NoticeModel _value;
   // ignore: unused_field
-  final $Res Function(NoticeModel) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = freezed,
-    Object? title = freezed,
-    Object? content = freezed,
-    Object? writer = freezed,
-    Object? viewCount = freezed,
-    Object? webLink = freezed,
-    Object? regDate = freezed,
+    Object? id = null,
+    Object? boardNum = null,
+    Object? name = null,
+    Object? boardDetail = null,
+    Object? writer = null,
+    Object? hits = null,
+    Object? url = null,
+    Object? picUrl = freezed,
+    Object? period = freezed,
+    Object? date = null,
   }) {
     return _then(_value.copyWith(
-      id: id == freezed
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as int,
-      title: title == freezed
-          ? _value.title
-          : title // ignore: cast_nullable_to_non_nullable
+      boardNum: null == boardNum
+          ? _value.boardNum
+          : boardNum // ignore: cast_nullable_to_non_nullable
               as String,
-      content: content == freezed
-          ? _value.content
-          : content // ignore: cast_nullable_to_non_nullable
+      name: null == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
               as String,
-      writer: writer == freezed
+      boardDetail: null == boardDetail
+          ? _value.boardDetail
+          : boardDetail // ignore: cast_nullable_to_non_nullable
+              as String,
+      writer: null == writer
           ? _value.writer
           : writer // ignore: cast_nullable_to_non_nullable
               as String,
-      viewCount: viewCount == freezed
-          ? _value.viewCount
-          : viewCount // ignore: cast_nullable_to_non_nullable
-              as int,
-      webLink: webLink == freezed
-          ? _value.webLink
-          : webLink // ignore: cast_nullable_to_non_nullable
+      hits: null == hits
+          ? _value.hits
+          : hits // ignore: cast_nullable_to_non_nullable
               as String,
-      regDate: regDate == freezed
-          ? _value.regDate
-          : regDate // ignore: cast_nullable_to_non_nullable
-              as DateTime,
-    ));
+      url: null == url
+          ? _value.url
+          : url // ignore: cast_nullable_to_non_nullable
+              as String,
+      picUrl: freezed == picUrl
+          ? _value.picUrl
+          : picUrl // ignore: cast_nullable_to_non_nullable
+              as String?,
+      period: freezed == period
+          ? _value.period
+          : period // ignore: cast_nullable_to_non_nullable
+              as String?,
+      date: null == date
+          ? _value.date
+          : date // ignore: cast_nullable_to_non_nullable
+              as String,
+    ) as $Val);
   }
 }
 
@@ -107,65 +132,83 @@ abstract class _$$_NoticeModelCopyWith<$Res>
           _$_NoticeModel value, $Res Function(_$_NoticeModel) then) =
       __$$_NoticeModelCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {int id,
-      String title,
-      String content,
+      String boardNum,
+      String name,
+      String boardDetail,
       String writer,
-      int viewCount,
-      String webLink,
-      DateTime regDate});
+      String hits,
+      String url,
+      String? picUrl,
+      String? period,
+      String date});
 }
 
 /// @nodoc
-class __$$_NoticeModelCopyWithImpl<$Res> extends _$NoticeModelCopyWithImpl<$Res>
+class __$$_NoticeModelCopyWithImpl<$Res>
+    extends _$NoticeModelCopyWithImpl<$Res, _$_NoticeModel>
     implements _$$_NoticeModelCopyWith<$Res> {
   __$$_NoticeModelCopyWithImpl(
       _$_NoticeModel _value, $Res Function(_$_NoticeModel) _then)
-      : super(_value, (v) => _then(v as _$_NoticeModel));
+      : super(_value, _then);
 
-  @override
-  _$_NoticeModel get _value => super._value as _$_NoticeModel;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = freezed,
-    Object? title = freezed,
-    Object? content = freezed,
-    Object? writer = freezed,
-    Object? viewCount = freezed,
-    Object? webLink = freezed,
-    Object? regDate = freezed,
+    Object? id = null,
+    Object? boardNum = null,
+    Object? name = null,
+    Object? boardDetail = null,
+    Object? writer = null,
+    Object? hits = null,
+    Object? url = null,
+    Object? picUrl = freezed,
+    Object? period = freezed,
+    Object? date = null,
   }) {
     return _then(_$_NoticeModel(
-      id: id == freezed
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as int,
-      title: title == freezed
-          ? _value.title
-          : title // ignore: cast_nullable_to_non_nullable
+      boardNum: null == boardNum
+          ? _value.boardNum
+          : boardNum // ignore: cast_nullable_to_non_nullable
               as String,
-      content: content == freezed
-          ? _value.content
-          : content // ignore: cast_nullable_to_non_nullable
+      name: null == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
               as String,
-      writer: writer == freezed
+      boardDetail: null == boardDetail
+          ? _value.boardDetail
+          : boardDetail // ignore: cast_nullable_to_non_nullable
+              as String,
+      writer: null == writer
           ? _value.writer
           : writer // ignore: cast_nullable_to_non_nullable
               as String,
-      viewCount: viewCount == freezed
-          ? _value.viewCount
-          : viewCount // ignore: cast_nullable_to_non_nullable
-              as int,
-      webLink: webLink == freezed
-          ? _value.webLink
-          : webLink // ignore: cast_nullable_to_non_nullable
+      hits: null == hits
+          ? _value.hits
+          : hits // ignore: cast_nullable_to_non_nullable
               as String,
-      regDate: regDate == freezed
-          ? _value.regDate
-          : regDate // ignore: cast_nullable_to_non_nullable
-              as DateTime,
+      url: null == url
+          ? _value.url
+          : url // ignore: cast_nullable_to_non_nullable
+              as String,
+      picUrl: freezed == picUrl
+          ? _value.picUrl
+          : picUrl // ignore: cast_nullable_to_non_nullable
+              as String?,
+      period: freezed == period
+          ? _value.period
+          : period // ignore: cast_nullable_to_non_nullable
+              as String?,
+      date: null == date
+          ? _value.date
+          : date // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -175,12 +218,15 @@ class __$$_NoticeModelCopyWithImpl<$Res> extends _$NoticeModelCopyWithImpl<$Res>
 class _$_NoticeModel implements _NoticeModel {
   const _$_NoticeModel(
       {required this.id,
-      required this.title,
-      required this.content,
+      required this.boardNum,
+      required this.name,
+      required this.boardDetail,
       required this.writer,
-      required this.viewCount,
-      required this.webLink,
-      required this.regDate});
+      required this.hits,
+      required this.url,
+      required this.picUrl,
+      required this.period,
+      required this.date});
 
   factory _$_NoticeModel.fromJson(Map<String, dynamic> json) =>
       _$$_NoticeModelFromJson(json);
@@ -188,21 +234,27 @@ class _$_NoticeModel implements _NoticeModel {
   @override
   final int id;
   @override
-  final String title;
+  final String boardNum;
   @override
-  final String content;
+  final String name;
+  @override
+  final String boardDetail;
   @override
   final String writer;
   @override
-  final int viewCount;
+  final String hits;
   @override
-  final String webLink;
+  final String url;
   @override
-  final DateTime regDate;
+  final String? picUrl;
+  @override
+  final String? period;
+  @override
+  final String date;
 
   @override
   String toString() {
-    return 'NoticeModel(id: $id, title: $title, content: $content, writer: $writer, viewCount: $viewCount, webLink: $webLink, regDate: $regDate)';
+    return 'NoticeModel(id: $id, boardNum: $boardNum, name: $name, boardDetail: $boardDetail, writer: $writer, hits: $hits, url: $url, picUrl: $picUrl, period: $period, date: $date)';
   }
 
   @override
@@ -210,29 +262,28 @@ class _$_NoticeModel implements _NoticeModel {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_NoticeModel &&
-            const DeepCollectionEquality().equals(other.id, id) &&
-            const DeepCollectionEquality().equals(other.title, title) &&
-            const DeepCollectionEquality().equals(other.content, content) &&
-            const DeepCollectionEquality().equals(other.writer, writer) &&
-            const DeepCollectionEquality().equals(other.viewCount, viewCount) &&
-            const DeepCollectionEquality().equals(other.webLink, webLink) &&
-            const DeepCollectionEquality().equals(other.regDate, regDate));
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.boardNum, boardNum) ||
+                other.boardNum == boardNum) &&
+            (identical(other.name, name) || other.name == name) &&
+            (identical(other.boardDetail, boardDetail) ||
+                other.boardDetail == boardDetail) &&
+            (identical(other.writer, writer) || other.writer == writer) &&
+            (identical(other.hits, hits) || other.hits == hits) &&
+            (identical(other.url, url) || other.url == url) &&
+            (identical(other.picUrl, picUrl) || other.picUrl == picUrl) &&
+            (identical(other.period, period) || other.period == period) &&
+            (identical(other.date, date) || other.date == date));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(id),
-      const DeepCollectionEquality().hash(title),
-      const DeepCollectionEquality().hash(content),
-      const DeepCollectionEquality().hash(writer),
-      const DeepCollectionEquality().hash(viewCount),
-      const DeepCollectionEquality().hash(webLink),
-      const DeepCollectionEquality().hash(regDate));
+  int get hashCode => Object.hash(runtimeType, id, boardNum, name, boardDetail,
+      writer, hits, url, picUrl, period, date);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_NoticeModelCopyWith<_$_NoticeModel> get copyWith =>
       __$$_NoticeModelCopyWithImpl<_$_NoticeModel>(this, _$identity);
 
@@ -247,12 +298,15 @@ class _$_NoticeModel implements _NoticeModel {
 abstract class _NoticeModel implements NoticeModel {
   const factory _NoticeModel(
       {required final int id,
-      required final String title,
-      required final String content,
+      required final String boardNum,
+      required final String name,
+      required final String boardDetail,
       required final String writer,
-      required final int viewCount,
-      required final String webLink,
-      required final DateTime regDate}) = _$_NoticeModel;
+      required final String hits,
+      required final String url,
+      required final String? picUrl,
+      required final String? period,
+      required final String date}) = _$_NoticeModel;
 
   factory _NoticeModel.fromJson(Map<String, dynamic> json) =
       _$_NoticeModel.fromJson;
@@ -260,17 +314,23 @@ abstract class _NoticeModel implements NoticeModel {
   @override
   int get id;
   @override
-  String get title;
+  String get boardNum;
   @override
-  String get content;
+  String get name;
+  @override
+  String get boardDetail;
   @override
   String get writer;
   @override
-  int get viewCount;
+  String get hits;
   @override
-  String get webLink;
+  String get url;
   @override
-  DateTime get regDate;
+  String? get picUrl;
+  @override
+  String? get period;
+  @override
+  String get date;
   @override
   @JsonKey(ignore: true)
   _$$_NoticeModelCopyWith<_$_NoticeModel> get copyWith =>

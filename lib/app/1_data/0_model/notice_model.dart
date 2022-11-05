@@ -11,14 +11,28 @@ part 'notice_model.g.dart';
 class NoticeModel with _$NoticeModel {
   const factory NoticeModel({
     required int id,
-    required String title,
-    required String content,
+    required String boardNum,
+    required String name,
+    required String boardDetail,
     required String writer,
-    required int viewCount,
-    required String webLink,
-    required DateTime regDate,
+    required String hits,
+    required String url,
+    required String? picUrl,
+    required String? period,
+    required String date,
   }) = _NoticeModel;
 
   factory NoticeModel.fromJson(Map<String, Object?> json) =>
       _$NoticeModelFromJson(json);
 }
+// "id": 395,
+// "menu": "EVENT",
+// "url": "https://cnuint.cnu.ac.kr/cnuint/notice/event.do?mode=view&articleNo=312718&article.offset=0&articleLimit=10",
+// "name": "Sweden-Korea Nobel Memorial Program 2022 스웨덴-대한민국 노벨 메모리얼 프로그램",
+// "hits": "69",
+// "boardNum": "224",
+// "date": "22.11.01",
+// "writer": "국제교류본부",
+// "picUrl": null,
+// "period": null,
+// "boardDetail": ""
