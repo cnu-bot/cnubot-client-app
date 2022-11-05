@@ -63,8 +63,27 @@ class WhiteHorseSquareListView extends StatelessWidget {
                   onTap: updateWhiteHorseSquareType,
                 ),
                 WhiteHorseSquareButton(
-                  whiteHorseSquareType:
-                      WhiteHorseSquareType.whiteHorseBulletinBoard,
+                  whiteHorseSquareType: WhiteHorseSquareType.univCultureField,
+                  currentType: currentType,
+                  onTap: updateWhiteHorseSquareType,
+                ),
+                WhiteHorseSquareButton(
+                  whiteHorseSquareType: WhiteHorseSquareType.cnuMarket,
+                  currentType: currentType,
+                  onTap: updateWhiteHorseSquareType,
+                ),
+                WhiteHorseSquareButton(
+                  whiteHorseSquareType: WhiteHorseSquareType.jobSearch,
+                  currentType: currentType,
+                  onTap: updateWhiteHorseSquareType,
+                ),
+                WhiteHorseSquareButton(
+                  whiteHorseSquareType: WhiteHorseSquareType.jobOffer,
+                  currentType: currentType,
+                  onTap: updateWhiteHorseSquareType,
+                ),
+                WhiteHorseSquareButton(
+                  whiteHorseSquareType: WhiteHorseSquareType.studyCompetition,
                   currentType: currentType,
                   onTap: updateWhiteHorseSquareType,
                 ),
