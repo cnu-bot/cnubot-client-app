@@ -52,11 +52,14 @@ class _SearchDetailScreenState extends State<SearchDetailScreen> {
                         height: 33.h,
                       ),
                       const TopText(text: '실시간 게시물'),
-                      Obx(() => noticeController.noticeModelList.isEmpty
-                          ? const SizedBox.shrink()
-                          : LiveNoticeListView(
-                              liveNoticeList: noticeController.noticeModelList,
-                            )),
+                      Obx(
+                        () => noticeController.noticeModelList.isEmpty
+                            ? const SizedBox.shrink()
+                            : LiveNoticeListView(
+                                liveNoticeList:
+                                    noticeController.noticeModelList,
+                              ),
+                      ),
                       SizedBox(
                         height: 160.h,
                       ),
