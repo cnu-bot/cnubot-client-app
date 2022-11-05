@@ -21,7 +21,7 @@ NoticeModel _$NoticeModelFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$NoticeModel {
   int get id => throw _privateConstructorUsedError;
-  String get boardNum => throw _privateConstructorUsedError;
+  String? get boardNum => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
   String get boardDetail => throw _privateConstructorUsedError;
   String get writer => throw _privateConstructorUsedError;
@@ -45,7 +45,7 @@ abstract class $NoticeModelCopyWith<$Res> {
   @useResult
   $Res call(
       {int id,
-      String boardNum,
+      String? boardNum,
       String name,
       String boardDetail,
       String writer,
@@ -70,7 +70,7 @@ class _$NoticeModelCopyWithImpl<$Res, $Val extends NoticeModel>
   @override
   $Res call({
     Object? id = null,
-    Object? boardNum = null,
+    Object? boardNum = freezed,
     Object? name = null,
     Object? boardDetail = null,
     Object? writer = null,
@@ -85,10 +85,10 @@ class _$NoticeModelCopyWithImpl<$Res, $Val extends NoticeModel>
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as int,
-      boardNum: null == boardNum
+      boardNum: freezed == boardNum
           ? _value.boardNum
           : boardNum // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -135,7 +135,7 @@ abstract class _$$_NoticeModelCopyWith<$Res>
   @useResult
   $Res call(
       {int id,
-      String boardNum,
+      String? boardNum,
       String name,
       String boardDetail,
       String writer,
@@ -158,7 +158,7 @@ class __$$_NoticeModelCopyWithImpl<$Res>
   @override
   $Res call({
     Object? id = null,
-    Object? boardNum = null,
+    Object? boardNum = freezed,
     Object? name = null,
     Object? boardDetail = null,
     Object? writer = null,
@@ -173,10 +173,10 @@ class __$$_NoticeModelCopyWithImpl<$Res>
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as int,
-      boardNum: null == boardNum
+      boardNum: freezed == boardNum
           ? _value.boardNum
           : boardNum // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -234,7 +234,7 @@ class _$_NoticeModel implements _NoticeModel {
   @override
   final int id;
   @override
-  final String boardNum;
+  final String? boardNum;
   @override
   final String name;
   @override
@@ -298,7 +298,7 @@ class _$_NoticeModel implements _NoticeModel {
 abstract class _NoticeModel implements NoticeModel {
   const factory _NoticeModel(
       {required final int id,
-      required final String boardNum,
+      required final String? boardNum,
       required final String name,
       required final String boardDetail,
       required final String writer,
@@ -314,7 +314,7 @@ abstract class _NoticeModel implements NoticeModel {
   @override
   int get id;
   @override
-  String get boardNum;
+  String? get boardNum;
   @override
   String get name;
   @override

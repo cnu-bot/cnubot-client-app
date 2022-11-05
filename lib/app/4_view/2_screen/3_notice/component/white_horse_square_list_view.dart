@@ -1,4 +1,3 @@
-import 'package:cnubot_app/app/4_view/0_constant/constant_color.dart';
 import 'package:cnubot_app/app/4_view/0_constant/enum/white_horse_square_type.dart';
 import 'package:cnubot_app/app/4_view/2_screen/3_notice/component/white_horse_square_button.dart';
 import 'package:flutter/material.dart';

@@ -1,5 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
+// ignore_for_file: non_constant_identifier_names
+
 part of 'notice_model.dart';
 
 // **************************************************************************
@@ -9,7 +11,7 @@ part of 'notice_model.dart';
 _$_NoticeModel _$$_NoticeModelFromJson(Map<String, dynamic> json) =>
     _$_NoticeModel(
       id: json['id'] as int,
-      boardNum: json['boardNum'] as String,
+      boardNum: json['boardNum'] as String?,
       name: json['name'] as String,
       boardDetail: json['boardDetail'] as String,
       writer: json['writer'] as String,

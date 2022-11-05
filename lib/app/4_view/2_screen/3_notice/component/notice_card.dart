@@ -1,5 +1,4 @@
 import 'package:cnubot_app/app/1_data/0_model/notice_model.dart';
-import 'package:cnubot_app/app/3_util/date_util.dart';
 import 'package:cnubot_app/app/3_util/url_util.dart';
 import 'package:cnubot_app/app/4_view/0_constant/constant_color.dart';
 import 'package:cnubot_app/app/4_view/0_constant/constant_text_style.dart';

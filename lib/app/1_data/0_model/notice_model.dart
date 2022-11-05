@@ -11,7 +11,7 @@ part 'notice_model.g.dart';
 class NoticeModel with _$NoticeModel {
   const factory NoticeModel({
     required int id,
-    required String boardNum,
+    required String? boardNum,
     required String name,
     required String boardDetail,
     required String writer,

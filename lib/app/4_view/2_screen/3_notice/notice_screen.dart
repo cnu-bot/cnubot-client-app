@@ -1,4 +1,3 @@
-import 'package:cnubot_app/app/4_view/0_constant/constant_color.dart';
 import 'package:cnubot_app/app/4_view/0_constant/enum/board_type.dart';
 import 'package:cnubot_app/app/4_view/1_component/1_layout/header/go_to_home_button.dart';
 import 'package:cnubot_app/app/4_view/1_component/1_layout/header/top_circle.dart';
@@ -96,6 +95,7 @@ class NoticeScreen extends GetView<NoticeController> {
                         () => ListView.builder(
                           physics: const NeverScrollableScrollPhysics(),
                           itemCount: controller.noticeModelList.length,
+                          padding: EdgeInsets.fromLTRB(0, 31.h, 0, 0),
                           shrinkWrap: true,
                           itemBuilder: (context, index) {
                             return NoticeCard(
