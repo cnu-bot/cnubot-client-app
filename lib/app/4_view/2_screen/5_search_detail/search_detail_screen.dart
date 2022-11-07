@@ -26,15 +26,22 @@ class _SearchDetailScreenState extends State<SearchDetailScreen> {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            SizedBox(
-              height: 30.h,
-            ),
             Stack(
               alignment: Alignment.center,
               children: [
-                const GoToHomeButton(),
-                const TopCircle(),
-                const TopLogo(),
+                Positioned(
+                  right: -7.w,
+                  top: 37.h,
+                  child: const GoToHomeButton(),
+                ),
+                Positioned(
+                  top: -66.h,
+                  child: const TopCircle(),
+                ),
+                Positioned(
+                  top: 96.h,
+                  child: const TopLogo(),
+                ),
                 Container(
                   margin: EdgeInsets.fromLTRB(0.w, 142.h, 0, 0),
                   child: Column(
@@ -45,11 +52,14 @@ class _SearchDetailScreenState extends State<SearchDetailScreen> {
                         height: 33.h,
                       ),
                       const TopText(text: '실시간 게시물'),
-                      Obx(() => noticeController.noticeModelList.isEmpty
-                          ? const SizedBox.shrink()
-                          : LiveNoticeListView(
-                              liveNoticeList: noticeController.noticeModelList,
-                            )),
+                      Obx(
+                        () => noticeController.noticeModelList.isEmpty
+                            ? const SizedBox.shrink()
+                            : LiveNoticeListView(
+                                liveNoticeList:
+                                    noticeController.noticeModelList,
+                              ),
+                      ),
                       SizedBox(
                         height: 160.h,
                       ),

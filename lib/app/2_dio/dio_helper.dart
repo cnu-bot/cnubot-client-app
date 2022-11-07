@@ -27,6 +27,18 @@ class DioHelper {
     dio!.interceptors.add(alice!.getDioInterceptor());
     dio!.interceptors.add(DioCacheInterceptor(options: dioCacheOptions));
   }
+  Future<List<dynamic>> getList(String url,
+      {dynamic param, bool? refresh}) async {
+    final response = await dio!.get(
+      url,
+      queryParameters: param,
+      options: refresh == true
+          ? dioCacheOptions.copyWith(policy: CachePolicy.refresh).toOptions()
+          : null,
+    );
+    return response.data as List<dynamic>;
+  }
+
   Future<Map<String, dynamic>> get(String url,
       {dynamic param, bool? refresh}) async {
     final response = await dio!.get(

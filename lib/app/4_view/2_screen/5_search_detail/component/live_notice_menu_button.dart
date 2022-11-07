@@ -15,7 +15,7 @@ class LiveNoticeMenuButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-        launchWeblink(noticeModel.webLink);
+        launchWeblink(noticeModel.url);
       },
       child: Container(
         width: 118.w,
@@ -26,7 +26,7 @@ class LiveNoticeMenuButton extends StatelessWidget {
           borderRadius: BorderRadius.circular(100.r),
         ),
         child: Text(
-          noticeModel.title,
+          noticeModel.name,
           style: kHeadline5,
           overflow: TextOverflow.ellipsis,
         ),

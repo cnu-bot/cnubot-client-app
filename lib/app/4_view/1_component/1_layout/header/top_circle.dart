@@ -9,18 +9,15 @@ class TopCircle extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Positioned(
-      top: -96.h,
-      child: Container(
-        width: 150.h,
-        height: 150.h,
-        padding: const EdgeInsets.all(
-          20.0,
-        ),
-        decoration: const BoxDecoration(
-          shape: BoxShape.circle,
-          color: kSecondaryBlue,
-        ),
+    return Container(
+      width: 150.h,
+      height: 150.h,
+      padding: const EdgeInsets.all(
+        20.0,
+      ),
+      decoration: const BoxDecoration(
+        shape: BoxShape.circle,
+        color: kSecondaryBlue,
       ),
     );
   }

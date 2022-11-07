@@ -37,9 +37,19 @@ class NoticeScreen extends GetView<NoticeController> {
                         clipBehavior: Clip.none,
                         alignment: Alignment.topCenter,
                         children: [
-                          const GoToHomeButton(),
-                          const TopCircle(),
-                          const TopLogo(),
+                          Positioned(
+                            right: -7.w,
+                            top: 37.h,
+                            child: const GoToHomeButton(),
+                          ),
+                          Positioned(
+                            top: -66.h,
+                            child: const TopCircle(),
+                          ),
+                          Positioned(
+                            top: 96.h,
+                            child: const TopLogo(),
+                          ),
                           Container(
                             margin: EdgeInsets.fromLTRB(0.w, 142.h, 0, 0),
                             child: Column(
@@ -85,8 +95,8 @@ class NoticeScreen extends GetView<NoticeController> {
                         () => ListView.builder(
                           physics: const NeverScrollableScrollPhysics(),
                           itemCount: controller.noticeModelList.length,
-                          shrinkWrap: true,
                           padding: EdgeInsets.fromLTRB(0, 31.h, 0, 0),
+                          shrinkWrap: true,
                           itemBuilder: (context, index) {
                             return NoticeCard(
                               noticeModel: controller.noticeModelList[index],
