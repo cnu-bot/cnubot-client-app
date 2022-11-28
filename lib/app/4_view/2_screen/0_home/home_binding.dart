@@ -8,7 +8,6 @@ import 'package:cnubot_app/app/2_dio/dio_helper.dart';
 import 'package:cnubot_app/app/4_view/2_screen/5_notice/notice_controller.dart';
 import 'package:cnubot_app/app/4_view/2_screen/6_food/food_controller.dart';
 import 'package:get/get.dart';
-
 import 'package:cnubot_app/app/4_view/2_screen/0_home/home_controller.dart';
 
 class HomeBinding implements Bindings {
