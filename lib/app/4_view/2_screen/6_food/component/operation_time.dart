@@ -1,3 +1,4 @@
+import 'package:cnubot_app/app/4_view/0_constant/constant_color.dart';
 import 'package:cnubot_app/app/4_view/0_constant/enum/cafeteria_type.dart';
 import 'package:cnubot_app/app/4_view/0_constant/enum/food_type.dart';
 import 'package:cnubot_app/app/4_view/1_component/0_button/gray_time_button.dart';
@@ -28,40 +29,45 @@ class OperationTime extends StatelessWidget {
         ),
         SizedBox(
           height: 80.h,
-          child: CustomScrollView(
-            scrollDirection: Axis.horizontal,
-            physics: const BouncingScrollPhysics(
-              parent: AlwaysScrollableScrollPhysics(),
-            ),
-            slivers: [
-              SliverToBoxAdapter(
-                child: Row(
-                  children: [
-                    SizedBox(
-                      width: 18.w,
-                    ),
-                    OperationTimeBox(
-                      time: '아침',
-                      cafeteriaType: cafeteriaType,
-                      foodType: foodType,
-                    ),
-                    OperationTimeBox(
-                      time: '점심',
-                      cafeteriaType: cafeteriaType,
-                      foodType: foodType,
-                    ),
-                    OperationTimeBox(
-                      time: '저녁',
-                      cafeteriaType: cafeteriaType,
-                      foodType: foodType,
-                    ),
-                    SizedBox(
-                      width: 18.w,
-                    ),
-                  ],
-                ),
+          child: RawScrollbar(
+            thumbColor: kBlue07.withOpacity(0.7),
+            radius: Radius.circular(100.r),
+            thickness: 4,
+            child: CustomScrollView(
+              scrollDirection: Axis.horizontal,
+              physics: const BouncingScrollPhysics(
+                parent: AlwaysScrollableScrollPhysics(),
               ),
-            ],
+              slivers: [
+                SliverToBoxAdapter(
+                  child: Row(
+                    children: [
+                      SizedBox(
+                        width: 18.w,
+                      ),
+                      OperationTimeBox(
+                        time: '아침',
+                        cafeteriaType: cafeteriaType,
+                        foodType: foodType,
+                      ),
+                      OperationTimeBox(
+                        time: '점심',
+                        cafeteriaType: cafeteriaType,
+                        foodType: foodType,
+                      ),
+                      OperationTimeBox(
+                        time: '저녁',
+                        cafeteriaType: cafeteriaType,
+                        foodType: foodType,
+                      ),
+                      SizedBox(
+                        width: 18.w,
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
           ),
         ),
       ],
