@@ -3,17 +3,17 @@ import 'package:cnubot_app/app/4_view/1_component/1_layout/header/go_to_home_but
 import 'package:cnubot_app/app/4_view/1_component/1_layout/header/top_circle.dart';
 import 'package:cnubot_app/app/4_view/1_component/1_layout/header/top_logo.dart';
 import 'package:cnubot_app/app/4_view/1_component/1_layout/header/top_text.dart';
-import 'package:cnubot_app/app/4_view/2_screen/3_notice/component/board_listview.dart';
-import 'package:cnubot_app/app/4_view/2_screen/3_notice/component/international_hq_list_view.dart';
-import 'package:cnubot_app/app/4_view/2_screen/3_notice/component/notice_card.dart';
-import 'package:cnubot_app/app/4_view/2_screen/3_notice/component/white_horse_square_list_view.dart';
-import 'package:cnubot_app/app/4_view/2_screen/3_notice/notice_controller.dart';
+import 'package:cnubot_app/app/4_view/2_screen/5_notice/component/board_listview.dart';
+import 'package:cnubot_app/app/4_view/2_screen/5_notice/component/international_hq_list_view.dart';
+import 'package:cnubot_app/app/4_view/2_screen/5_notice/component/notice_card.dart';
+import 'package:cnubot_app/app/4_view/2_screen/5_notice/component/white_horse_square_list_view.dart';
+import 'package:cnubot_app/app/4_view/2_screen/5_notice/notice_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
-class NoticeScreen extends GetView<NoticeController> {
-  const NoticeScreen({Key? key}) : super(key: key);
+class FoodScreen extends GetView<NoticeController> {
+  const FoodScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

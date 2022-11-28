@@ -1,5 +1,5 @@
 import 'package:cnubot_app/app/4_view/0_constant/enum/shortcut_menu_type.dart';
-import 'package:cnubot_app/app/4_view/2_screen/5_search_detail/component/shortcut_menu_button.dart';
+import 'package:cnubot_app/app/4_view/2_screen/4_search_detail/component/shortcut_menu_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
