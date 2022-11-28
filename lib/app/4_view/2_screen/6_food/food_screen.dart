@@ -98,21 +98,7 @@ class FoodScreen extends GetView<FoodController> {
                           foodType: controller.foodType.value,
                         ),
                       ),
-
-                      // 소식 게시글
-                      // Obx(
-                      //   () => ListView.builder(
-                      //     physics: const NeverScrollableScrollPhysics(),
-                      //     itemCount: controller.noticeModelList.length,
-                      //     padding: EdgeInsets.fromLTRB(0, 31.h, 0, 0),
-                      //     shrinkWrap: true,
-                      //     itemBuilder: (context, index) {
-                      //       return NoticeCard(
-                      //         noticeModel: controller.noticeModelList[index],
-                      //       );
-                      //     },
-                      //   ),
-                      // ),
+                      // 식단 표시
                     ],
                   ),
                 ),
