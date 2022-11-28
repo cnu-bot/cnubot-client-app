@@ -5,8 +5,8 @@ import 'package:cnubot_app/app/4_view/0_constant/constant_text_style.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class NoticeCard extends StatelessWidget {
-  const NoticeCard({
+class FoodCard extends StatelessWidget {
+  const FoodCard({
     Key? key,
     required this.noticeModel,
   }) : super(key: key);

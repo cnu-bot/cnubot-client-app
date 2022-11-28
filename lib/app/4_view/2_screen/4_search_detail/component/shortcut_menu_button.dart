@@ -1,5 +1,5 @@
 import 'package:cnubot_app/app/4_view/0_constant/enum/shortcut_menu_type.dart';
-import 'package:cnubot_app/app/4_view/1_component/0_button/gray_round_button.dart';
+import 'package:cnubot_app/app/4_view/1_component/0_button/gray_button.dart';
 import 'package:flutter/material.dart';
 
 class ShortcutMenuButton extends StatelessWidget {

@@ -6,6 +6,7 @@ import 'package:cnubot_app/app/4_view/1_component/1_layout/header/top_text.dart'
 import 'package:cnubot_app/app/4_view/2_screen/6_food/component/cafeteria_listview.dart';
 import 'package:cnubot_app/app/4_view/2_screen/6_food/component/day_list_view.dart';
 import 'package:cnubot_app/app/4_view/2_screen/6_food/component/food_list_view.dart';
+import 'package:cnubot_app/app/4_view/2_screen/6_food/component/operation_time.dart';
 import 'package:cnubot_app/app/4_view/2_screen/6_food/food_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -87,6 +88,17 @@ class FoodScreen extends GetView<FoodController> {
                           ),
                         ],
                       ),
+                      SizedBox(
+                        height: 30.h,
+                      ),
+                      // 운영시간
+                      Obx(
+                        () => OperationTime(
+                          cafeteriaType: controller.cafeteriaType.value,
+                          foodType: controller.foodType.value,
+                        ),
+                      ),
+
                       // 소식 게시글
                       // Obx(
                       //   () => ListView.builder(

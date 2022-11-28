@@ -14,7 +14,6 @@ import 'package:cnubot_app/app/4_view/2_screen/0_home/home_controller.dart';
 class HomeBinding implements Bindings {
   @override
   void dependencies() {
-    final String param = Get.parameters['page'] ?? '';
     Get.lazyPut<HomeController>(() {
       return HomeController(
         repository: ShuttleRepository(

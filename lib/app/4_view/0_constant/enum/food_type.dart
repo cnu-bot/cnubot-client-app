@@ -3,7 +3,7 @@ enum FoodType {
   koreanFood('한식'),
   westernFood('양식'),
   japaneseFood('일식'),
-  chineseCuisine('중식'),
+  chineseFood('중식'),
   snack('스낵'),
   undefined('');
 

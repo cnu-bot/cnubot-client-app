@@ -16,7 +16,7 @@ class CafeteriaListView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       margin: EdgeInsets.fromLTRB(0, 13.h, 0, 0),
-      height: 29.h,
+      height: 34.h,
       child: CustomScrollView(
         scrollDirection: Axis.horizontal,
         physics: const BouncingScrollPhysics(
