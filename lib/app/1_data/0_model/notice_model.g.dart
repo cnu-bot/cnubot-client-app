@@ -1,7 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-// ignore_for_file: non_constant_identifier_names
-
 part of 'notice_model.dart';
 
 // **************************************************************************
@@ -11,21 +9,27 @@ part of 'notice_model.dart';
 _$_NoticeModel _$$_NoticeModelFromJson(Map<String, dynamic> json) =>
     _$_NoticeModel(
       id: json['id'] as int,
-      title: json['title'] as String,
-      content: json['content'] as String,
+      boardNum: json['boardNum'] as String?,
+      name: json['name'] as String,
+      boardDetail: json['boardDetail'] as String,
       writer: json['writer'] as String,
-      viewCount: json['viewCount'] as int,
-      webLink: json['webLink'] as String,
-      regDate: DateTime.parse(json['regDate'] as String),
+      hits: json['hits'] as String,
+      url: json['url'] as String,
+      picUrl: json['picUrl'] as String?,
+      period: json['period'] as String?,
+      date: json['date'] as String,
     );
 
 Map<String, dynamic> _$$_NoticeModelToJson(_$_NoticeModel instance) =>
     <String, dynamic>{
       'id': instance.id,
-      'title': instance.title,
-      'content': instance.content,
+      'boardNum': instance.boardNum,
+      'name': instance.name,
+      'boardDetail': instance.boardDetail,
       'writer': instance.writer,
-      'viewCount': instance.viewCount,
-      'webLink': instance.webLink,
-      'regDate': instance.regDate.toIso8601String(),
+      'hits': instance.hits,
+      'url': instance.url,
+      'picUrl': instance.picUrl,
+      'period': instance.period,
+      'date': instance.date,
     };

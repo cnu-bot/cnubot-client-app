@@ -1,3 +1,4 @@
+import 'package:cnubot_app/app/0_routes/app_pages.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
@@ -9,18 +10,14 @@ class GoToHomeButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Positioned(
-      right: 0.w,
-      top: 32.h,
-      child: InkWell(
-        onTap: () {
-          Get.back();
-        },
-        child: Image(
-          width: 65.w,
-          height: 65.h,
-          image: const AssetImage('assets/images/common/memoji02.png'),
-        ),
+    return InkWell(
+      onTap: () {
+        Get.offAllNamed(Routes.search);
+      },
+      child: Image(
+        width: 88.w,
+        height: 74.h,
+        image: const AssetImage('assets/images/common/button_home.png'),
       ),
     );
   }
