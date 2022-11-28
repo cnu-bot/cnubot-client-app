@@ -1,25 +1,24 @@
-import 'package:cnubot_app/app/4_view/0_constant/enum/board_type.dart';
+import 'package:cnubot_app/app/4_view/0_constant/enum/cafeteria_type.dart';
 import 'package:cnubot_app/app/4_view/1_component/1_layout/header/go_to_home_button.dart';
 import 'package:cnubot_app/app/4_view/1_component/1_layout/header/top_circle.dart';
 import 'package:cnubot_app/app/4_view/1_component/1_layout/header/top_logo.dart';
 import 'package:cnubot_app/app/4_view/1_component/1_layout/header/top_text.dart';
-import 'package:cnubot_app/app/4_view/2_screen/5_notice/component/board_listview.dart';
-import 'package:cnubot_app/app/4_view/2_screen/5_notice/component/international_hq_list_view.dart';
-import 'package:cnubot_app/app/4_view/2_screen/5_notice/component/notice_card.dart';
-import 'package:cnubot_app/app/4_view/2_screen/5_notice/component/white_horse_square_list_view.dart';
-import 'package:cnubot_app/app/4_view/2_screen/5_notice/notice_controller.dart';
+import 'package:cnubot_app/app/4_view/2_screen/6_food/component/cafeteria_listview.dart';
+import 'package:cnubot_app/app/4_view/2_screen/6_food/component/day_list_view.dart';
+import 'package:cnubot_app/app/4_view/2_screen/6_food/component/food_list_view.dart';
+import 'package:cnubot_app/app/4_view/2_screen/6_food/food_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
-class FoodScreen extends GetView<NoticeController> {
+class FoodScreen extends GetView<FoodController> {
   const FoodScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return RefreshIndicator(
       onRefresh: () async {
-        controller.getNoticeModelList(refresh: true);
+        controller.getFoodModelList(refresh: true);
         return Future.value();
       },
       child: Column(
@@ -55,32 +54,30 @@ class FoodScreen extends GetView<NoticeController> {
                             child: Column(
                               children: [
                                 const TopText(
-                                  text: '뉴스',
+                                  text: '학식',
                                 ),
                                 Obx(
                                   () => Column(
                                     children: [
-                                      BoardListView(
-                                        currentType: controller.boardType.value,
+                                      CafeteriaListView(
+                                        currentType:
+                                            controller.cafeteriaType.value,
                                         updateBoardType:
-                                            controller.updateBoardType,
+                                            controller.updateCafeteriaType,
                                       ),
-                                      controller.boardType.value ==
-                                              BoardType.whiteHorseSquare
-                                          ? WhiteHorseSquareListView(
-                                              currentType: controller
-                                                  .whiteHorseSquareType.value,
-                                              updateWhiteHorseSquareType:
-                                                  controller
-                                                      .updateWhiteHorseSquareType,
+                                      controller.cafeteriaType.value ==
+                                              CafeteriaType.studentHall1
+                                          ? FoodListView(
+                                              currentType:
+                                                  controller.foodType.value,
+                                              updateFoodType:
+                                                  controller.updateFoodType,
                                             )
-                                          : InternationalHqListView(
-                                              currentType: controller
-                                                  .internationalExchangeHqType
-                                                  .value,
-                                              updateInternationalHqType:
-                                                  controller
-                                                      .updateInternationalHqType,
+                                          : DayListView(
+                                              currentType:
+                                                  controller.dayType.value,
+                                              updateDayType:
+                                                  controller.updateDayType,
                                             ),
                                     ],
                                   ),
@@ -91,19 +88,19 @@ class FoodScreen extends GetView<NoticeController> {
                         ],
                       ),
                       // 소식 게시글
-                      Obx(
-                        () => ListView.builder(
-                          physics: const NeverScrollableScrollPhysics(),
-                          itemCount: controller.noticeModelList.length,
-                          padding: EdgeInsets.fromLTRB(0, 31.h, 0, 0),
-                          shrinkWrap: true,
-                          itemBuilder: (context, index) {
-                            return NoticeCard(
-                              noticeModel: controller.noticeModelList[index],
-                            );
-                          },
-                        ),
-                      ),
+                      // Obx(
+                      //   () => ListView.builder(
+                      //     physics: const NeverScrollableScrollPhysics(),
+                      //     itemCount: controller.noticeModelList.length,
+                      //     padding: EdgeInsets.fromLTRB(0, 31.h, 0, 0),
+                      //     shrinkWrap: true,
+                      //     itemBuilder: (context, index) {
+                      //       return NoticeCard(
+                      //         noticeModel: controller.noticeModelList[index],
+                      //       );
+                      //     },
+                      //   ),
+                      // ),
                     ],
                   ),
                 ),

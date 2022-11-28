@@ -1,9 +1,9 @@
-import 'package:cnubot_app/app/1_data/0_model/notice_model.dart';
+import 'package:cnubot_app/app/1_data/0_model/food_model.dart';
 import 'package:cnubot_app/app/1_data/2_repository/food_repository.dart';
 import 'package:cnubot_app/app/3_util/dialog_util.dart';
-import 'package:cnubot_app/app/4_view/0_constant/enum/board_type.dart';
-import 'package:cnubot_app/app/4_view/0_constant/enum/international_hq_type.dart';
-import 'package:cnubot_app/app/4_view/0_constant/enum/white_horse_square_type.dart';
+import 'package:cnubot_app/app/4_view/0_constant/enum/cafeteria_type.dart';
+import 'package:cnubot_app/app/4_view/0_constant/enum/day_type.dart';
+import 'package:cnubot_app/app/4_view/0_constant/enum/food_type.dart';
 import 'package:get/get.dart';
 
 class FoodController extends GetxController {
@@ -12,53 +12,39 @@ class FoodController extends GetxController {
   FoodController({required this.repository});
 
   // 상위 분류
-  Rx<BoardType> boardType = BoardType.whiteHorseSquare.obs;
-  // 백마광장 하위 메뉴
-  Rx<WhiteHorseSquareType> whiteHorseSquareType = WhiteHorseSquareType.news.obs;
-  // 국제교류본부 하위 메뉴
-  Rx<InternationalHqType> internationalExchangeHqType =
-      InternationalHqType.studentRecruiting.obs;
+  Rx<CafeteriaType> cafeteriaType = CafeteriaType.dormitory.obs;
+  // 요일
+  Rx<DayType> dayType = DayType.today.obs;
+  // 음식 타입
+  Rx<FoodType> foodType = FoodType.ramen.obs;
   // 게시글
-  RxList<NoticeModel> noticeModelList = <NoticeModel>[].obs;
+  RxList<FoodModel> noticeModelList = <FoodModel>[].obs;
   @override
   void onInit() async {
     super.onInit();
-    getNoticeModelList(refresh: true);
+    getFoodModelList(refresh: true);
   }
 
   // 상위 분류 변경
-  void updateBoardType(BoardType newValue) {
-    boardType.value = newValue;
-    getNoticeModelList(refresh: false);
+  void updateCafeteriaType(CafeteriaType newValue) {
+    cafeteriaType.value = newValue;
+    getFoodModelList(refresh: false);
   }
 
-  // 백마광장 하위 메뉴 변경
-  void updateWhiteHorseSquareType(WhiteHorseSquareType newValue) {
-    whiteHorseSquareType.value = newValue;
-    getNoticeModelList(refresh: false);
+  // 요일 변경
+  void updateDayType(DayType newValue) {
+    dayType.value = newValue;
+    getFoodModelList(refresh: false);
   }
 
-  // 국제교류본부 하위 메뉴 변경
-  void updateInternationalHqType(InternationalHqType newValue) {
-    internationalExchangeHqType.value = newValue;
-    getNoticeModelList(refresh: false);
+  // 음식 타입 변경
+  void updateFoodType(FoodType newValue) {
+    foodType.value = newValue;
+    getFoodModelList(refresh: false);
   }
 
-  void getNoticeModelList({bool? refresh}) async {
-    try {
-      String? menu;
-      if (boardType.value == BoardType.whiteHorseSquare) {
-        menu = whiteHorseSquareType.value.param;
-      } else if (boardType.value == BoardType.internationalHq) {
-        menu = internationalExchangeHqType.value.param;
-      }
-      noticeModelList.value = await repository.getNoticeModelList(
-        {
-          'menuName': menu,
-        },
-        refresh: refresh,
-      );
-    } catch (e) {
+  void getFoodModelList({bool? refresh}) async {
+    try {} catch (e) {
       getDialog(e);
     }
   }
