@@ -8,7 +8,7 @@ import 'package:cnubot_app/app/4_view/2_screen/6_food/component/opertion_time_in
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class OperationTime extends StatelessWidget {
+class OperationTime extends StatefulWidget {
   const OperationTime({
     Key? key,
     required this.cafeteriaType,
@@ -16,6 +16,18 @@ class OperationTime extends StatelessWidget {
   }) : super(key: key);
   final CafeteriaType cafeteriaType;
   final FoodType foodType;
+
+  @override
+  State<OperationTime> createState() => _OperationTimeState();
+}
+
+class _OperationTimeState extends State<OperationTime> {
+  late ScrollController scrollController;
+  @override
+  initState() {
+    super.initState();
+    scrollController = ScrollController();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -30,6 +42,11 @@ class OperationTime extends StatelessWidget {
         SizedBox(
           height: 80.h,
           child: RawScrollbar(
+            trackVisibility: true,
+            trackColor: kGrayF3,
+            trackBorderColor: kGrayF3,
+            controller: scrollController,
+            thumbVisibility: true,
             thumbColor: kBlue07.withOpacity(0.7),
             radius: Radius.circular(100.r),
             thickness: 4,
@@ -47,18 +64,18 @@ class OperationTime extends StatelessWidget {
                       ),
                       OperationTimeBox(
                         time: '아침',
-                        cafeteriaType: cafeteriaType,
-                        foodType: foodType,
+                        cafeteriaType: widget.cafeteriaType,
+                        foodType: widget.foodType,
                       ),
                       OperationTimeBox(
                         time: '점심',
-                        cafeteriaType: cafeteriaType,
-                        foodType: foodType,
+                        cafeteriaType: widget.cafeteriaType,
+                        foodType: widget.foodType,
                       ),
                       OperationTimeBox(
                         time: '저녁',
-                        cafeteriaType: cafeteriaType,
-                        foodType: foodType,
+                        cafeteriaType: widget.cafeteriaType,
+                        foodType: widget.foodType,
                       ),
                       SizedBox(
                         width: 18.w,

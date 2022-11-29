@@ -23,6 +23,7 @@ const Color kGray6B = Color(0xFF6B6B6B);
 const Color kGray7B = Color(0xFF7B7B7B);
 const Color kGrayB1 = Color(0xFFB1B1B1);
 const Color kGrayEE = Color(0xFFEEEEEE);
+const Color kGrayF3 = Color(0xFFF3F3F3);
 
 const Color kBlue00 = Color(0xFF00299F);
 const Color kBlue23 = Color(0xFF233D87);
