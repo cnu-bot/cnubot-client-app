@@ -74,12 +74,18 @@ class FoodController extends GetxController {
       final List<FoodModel> tempLunchList = [];
       final List<FoodModel> tempDinnerList = [];
       for (int i = 0; i < foodModelList.length; i++) {
-        if (foodModelList[i].time == TimeType.breakfast) {
-          tempBreakfastList.add(foodModelList[i]);
-        } else if (foodModelList[i].time == TimeType.lunch) {
-          tempLunchList.add(foodModelList[i]);
-        } else if (foodModelList[i].time == TimeType.dinner) {
-          tempDinnerList.add(foodModelList[i]);
+        switch (foodModelList[i].time) {
+          case TimeType.breakfast:
+            tempBreakfastList.add(foodModelList[i]);
+            break;
+          case TimeType.lunch:
+            tempLunchList.add(foodModelList[i]);
+            break;
+          case TimeType.dinner:
+            tempDinnerList.add(foodModelList[i]);
+            break;
+          case TimeType.undefined:
+            break;
         }
       }
       breakfastList.value = tempBreakfastList;
