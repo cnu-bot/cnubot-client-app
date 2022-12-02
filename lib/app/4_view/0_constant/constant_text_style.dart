@@ -71,6 +71,12 @@ TextStyle kBody5 = TextStyle(
   fontSize: 9.sp,
   color: kGray7B,
 );
+// 바텀 네비게이션
+TextStyle kBody6 = TextStyle(
+  fontWeight: FontWeight.w600,
+  fontSize: 8.sp,
+  color: kGray8D,
+);
 
 // 바텀 네비게이션
 TextStyle kNavLabel = TextStyle(
