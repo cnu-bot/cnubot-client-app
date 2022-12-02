@@ -90,8 +90,8 @@ class FoodNameText extends StatelessWidget {
     );
   }
 
-  String convertFoodName(String name) {
-    return name.split('[')[0];
+  String convertFoodName(String foodFullName) {
+    return foodFullName.split('[')[0];
   }
 }
 
@@ -123,12 +123,12 @@ class FoodOriginButton extends StatelessWidget {
           );
   }
 
-  String convertOrigin(String name) {
+  String convertOrigin(String foodFullName) {
     final RegExp exp = RegExp(r'(\[.*\])');
-    final RegExpMatch? match = exp.firstMatch(name);
-    if (match == null) {
-      return '';
-    }
-    return match[0].toString().replaceAll('[', '').replaceAll(']', '');
+    final RegExpMatch? match = exp.firstMatch(foodFullName);
+    if (match == null) return '';
+    String origin = match[0].toString();
+    origin = origin.replaceAll('[', '').replaceAll(']', '');
+    return origin;
   }
 }
