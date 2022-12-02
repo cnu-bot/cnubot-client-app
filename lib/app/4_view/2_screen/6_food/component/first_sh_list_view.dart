@@ -38,10 +38,9 @@ class FirstShListView extends GetView<FoodController> {
             SizedBox(
               width: 375.w,
               height: 200.h,
-              child: Obx(() {
-                return ListView.builder(
+              child: Obx(
+                () => ListView.builder(
                   scrollDirection: Axis.horizontal,
-                  physics: const NeverScrollableScrollPhysics(),
                   itemCount: controller.firstShFoodModelList.length,
                   shrinkWrap: true,
                   padding: EdgeInsets.only(left: 18.w),
@@ -50,8 +49,8 @@ class FirstShListView extends GetView<FoodController> {
                       firstShFoodModel: controller.firstShFoodModelList[index],
                     );
                   },
-                );
-              }),
+                ),
+              ),
             ),
           ],
         ),
