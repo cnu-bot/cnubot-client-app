@@ -47,5 +47,6 @@ flutter:
   assets:
     - assets/images/common/
     - assets/images/search/
+    - assets/images/food/
     - assets/config/
 
