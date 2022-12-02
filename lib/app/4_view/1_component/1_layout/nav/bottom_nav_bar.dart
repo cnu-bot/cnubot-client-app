@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:cnubot_app/app/4_view/0_constant/constant_color.dart';
 import 'package:cnubot_app/app/4_view/0_constant/constant_text_style.dart';
 import 'package:cnubot_app/app/4_view/0_constant/enum/nav_page_type.dart';
@@ -18,9 +20,9 @@ class BottomNavBar extends StatelessWidget {
   final void Function(int)? updateCurrentPage;
   @override
   Widget build(BuildContext context) {
-    final bottomPadding = MediaQuery.of(context).padding.bottom;
+    final double bnbHeight = Platform.isIOS ? 110.h : 87.h;
     return AnimatedContainer(
-      height: visible ? (bottomPadding + 87).h : 0,
+      height: visible ? bnbHeight : 0,
       duration: const Duration(milliseconds: 200),
       child: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
