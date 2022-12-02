@@ -20,13 +20,12 @@ FoodModel _$FoodModelFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$FoodModel {
-  int get id => throw _privateConstructorUsedError;
-  String? get foodCourt => throw _privateConstructorUsedError;
-  String get day => throw _privateConstructorUsedError;
-  String get time => throw _privateConstructorUsedError;
+  CafeteriaType get foodCourt => throw _privateConstructorUsedError;
+  DayType get day => throw _privateConstructorUsedError;
+  TimeType get time => throw _privateConstructorUsedError;
   String get type => throw _privateConstructorUsedError;
-  int get calorie => throw _privateConstructorUsedError;
-  List<String> get menu => throw _privateConstructorUsedError;
+  int? get calorie => throw _privateConstructorUsedError;
+  List<String>? get foods => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -40,13 +39,12 @@ abstract class $FoodModelCopyWith<$Res> {
       _$FoodModelCopyWithImpl<$Res, FoodModel>;
   @useResult
   $Res call(
-      {int id,
-      String? foodCourt,
-      String day,
-      String time,
+      {CafeteriaType foodCourt,
+      DayType day,
+      TimeType time,
       String type,
-      int calorie,
-      List<String> menu});
+      int? calorie,
+      List<String>? foods});
 }
 
 /// @nodoc
@@ -62,43 +60,38 @@ class _$FoodModelCopyWithImpl<$Res, $Val extends FoodModel>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = null,
-    Object? foodCourt = freezed,
+    Object? foodCourt = null,
     Object? day = null,
     Object? time = null,
     Object? type = null,
-    Object? calorie = null,
-    Object? menu = null,
+    Object? calorie = freezed,
+    Object? foods = freezed,
   }) {
     return _then(_value.copyWith(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as int,
-      foodCourt: freezed == foodCourt
+      foodCourt: null == foodCourt
           ? _value.foodCourt
           : foodCourt // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as CafeteriaType,
       day: null == day
           ? _value.day
           : day // ignore: cast_nullable_to_non_nullable
-              as String,
+              as DayType,
       time: null == time
           ? _value.time
           : time // ignore: cast_nullable_to_non_nullable
-              as String,
+              as TimeType,
       type: null == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
               as String,
-      calorie: null == calorie
+      calorie: freezed == calorie
           ? _value.calorie
           : calorie // ignore: cast_nullable_to_non_nullable
-              as int,
-      menu: null == menu
-          ? _value.menu
-          : menu // ignore: cast_nullable_to_non_nullable
-              as List<String>,
+              as int?,
+      foods: freezed == foods
+          ? _value.foods
+          : foods // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
     ) as $Val);
   }
 }
@@ -111,13 +104,12 @@ abstract class _$$_FoodModelCopyWith<$Res> implements $FoodModelCopyWith<$Res> {
   @override
   @useResult
   $Res call(
-      {int id,
-      String? foodCourt,
-      String day,
-      String time,
+      {CafeteriaType foodCourt,
+      DayType day,
+      TimeType time,
       String type,
-      int calorie,
-      List<String> menu});
+      int? calorie,
+      List<String>? foods});
 }
 
 /// @nodoc
@@ -131,43 +123,38 @@ class __$$_FoodModelCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = null,
-    Object? foodCourt = freezed,
+    Object? foodCourt = null,
     Object? day = null,
     Object? time = null,
     Object? type = null,
-    Object? calorie = null,
-    Object? menu = null,
+    Object? calorie = freezed,
+    Object? foods = freezed,
   }) {
     return _then(_$_FoodModel(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as int,
-      foodCourt: freezed == foodCourt
+      foodCourt: null == foodCourt
           ? _value.foodCourt
           : foodCourt // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as CafeteriaType,
       day: null == day
           ? _value.day
           : day // ignore: cast_nullable_to_non_nullable
-              as String,
+              as DayType,
       time: null == time
           ? _value.time
           : time // ignore: cast_nullable_to_non_nullable
-              as String,
+              as TimeType,
       type: null == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
               as String,
-      calorie: null == calorie
+      calorie: freezed == calorie
           ? _value.calorie
           : calorie // ignore: cast_nullable_to_non_nullable
-              as int,
-      menu: null == menu
-          ? _value._menu
-          : menu // ignore: cast_nullable_to_non_nullable
-              as List<String>,
+              as int?,
+      foods: freezed == foods
+          ? _value._foods
+          : foods // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
     ));
   }
 }
@@ -176,40 +163,39 @@ class __$$_FoodModelCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_FoodModel implements _FoodModel {
   const _$_FoodModel(
-      {required this.id,
-      required this.foodCourt,
+      {required this.foodCourt,
       required this.day,
       required this.time,
       required this.type,
       required this.calorie,
-      required final List<String> menu})
-      : _menu = menu;
+      required final List<String>? foods})
+      : _foods = foods;
 
   factory _$_FoodModel.fromJson(Map<String, dynamic> json) =>
       _$$_FoodModelFromJson(json);
 
   @override
-  final int id;
+  final CafeteriaType foodCourt;
   @override
-  final String? foodCourt;
+  final DayType day;
   @override
-  final String day;
-  @override
-  final String time;
+  final TimeType time;
   @override
   final String type;
   @override
-  final int calorie;
-  final List<String> _menu;
+  final int? calorie;
+  final List<String>? _foods;
   @override
-  List<String> get menu {
+  List<String>? get foods {
+    final value = _foods;
+    if (value == null) return null;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_menu);
+    return EqualUnmodifiableListView(value);
   }
 
   @override
   String toString() {
-    return 'FoodModel(id: $id, foodCourt: $foodCourt, day: $day, time: $time, type: $type, calorie: $calorie, menu: $menu)';
+    return 'FoodModel(foodCourt: $foodCourt, day: $day, time: $time, type: $type, calorie: $calorie, foods: $foods)';
   }
 
   @override
@@ -217,20 +203,19 @@ class _$_FoodModel implements _FoodModel {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_FoodModel &&
-            (identical(other.id, id) || other.id == id) &&
             (identical(other.foodCourt, foodCourt) ||
                 other.foodCourt == foodCourt) &&
             (identical(other.day, day) || other.day == day) &&
             (identical(other.time, time) || other.time == time) &&
             (identical(other.type, type) || other.type == type) &&
             (identical(other.calorie, calorie) || other.calorie == calorie) &&
-            const DeepCollectionEquality().equals(other._menu, _menu));
+            const DeepCollectionEquality().equals(other._foods, _foods));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, id, foodCourt, day, time, type,
-      calorie, const DeepCollectionEquality().hash(_menu));
+  int get hashCode => Object.hash(runtimeType, foodCourt, day, time, type,
+      calorie, const DeepCollectionEquality().hash(_foods));
 
   @JsonKey(ignore: true)
   @override
@@ -248,31 +233,28 @@ class _$_FoodModel implements _FoodModel {
 
 abstract class _FoodModel implements FoodModel {
   const factory _FoodModel(
-      {required final int id,
-      required final String? foodCourt,
-      required final String day,
-      required final String time,
+      {required final CafeteriaType foodCourt,
+      required final DayType day,
+      required final TimeType time,
       required final String type,
-      required final int calorie,
-      required final List<String> menu}) = _$_FoodModel;
+      required final int? calorie,
+      required final List<String>? foods}) = _$_FoodModel;
 
   factory _FoodModel.fromJson(Map<String, dynamic> json) =
       _$_FoodModel.fromJson;
 
   @override
-  int get id;
+  CafeteriaType get foodCourt;
   @override
-  String? get foodCourt;
+  DayType get day;
   @override
-  String get day;
-  @override
-  String get time;
+  TimeType get time;
   @override
   String get type;
   @override
-  int get calorie;
+  int? get calorie;
   @override
-  List<String> get menu;
+  List<String>? get foods;
   @override
   @JsonKey(ignore: true)
   _$$_FoodModelCopyWith<_$_FoodModel> get copyWith =>
