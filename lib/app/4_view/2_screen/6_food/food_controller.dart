@@ -1,9 +1,11 @@
+import 'package:cnubot_app/app/1_data/0_model/first_sh_food_model.dart';
 import 'package:cnubot_app/app/1_data/0_model/food_model.dart';
 import 'package:cnubot_app/app/1_data/2_repository/food_repository.dart';
 import 'package:cnubot_app/app/3_util/dialog_util.dart';
 import 'package:cnubot_app/app/4_view/0_constant/enum/cafeteria_type.dart';
 import 'package:cnubot_app/app/4_view/0_constant/enum/day_type.dart';
-import 'package:cnubot_app/app/4_view/0_constant/enum/food_type.dart';
+import 'package:cnubot_app/app/4_view/0_constant/enum/first_sh_food_type.dart';
+import 'package:cnubot_app/app/4_view/0_constant/enum/time_type.dart';
 import 'package:get/get.dart';
 
 class FoodController extends GetxController {
@@ -16,35 +18,84 @@ class FoodController extends GetxController {
   // 요일
   Rx<DayType> dayType = DayType.today.obs;
   // 음식 타입
-  Rx<FoodType> foodType = FoodType.ramen.obs;
+  Rx<FirstShFoodType> foodType = FirstShFoodType.ramen.obs;
   // 게시글
-  RxList<FoodModel> noticeModelList = <FoodModel>[].obs;
+  RxList<FoodModel> breakfastList = <FoodModel>[].obs;
+  RxList<FoodModel> lunchList = <FoodModel>[].obs;
+  RxList<FoodModel> dinnerList = <FoodModel>[].obs;
+
+  // 1학 리스트
+  RxList<FirstShFoodModel> firstShFoodModelList = <FirstShFoodModel>[].obs;
+
   @override
   void onInit() async {
     super.onInit();
     getFoodModelList(refresh: true);
+    getFirstSHFoodModelList(refresh: true);
   }
 
   // 상위 분류 변경
   void updateCafeteriaType(CafeteriaType newValue) {
     cafeteriaType.value = newValue;
-    getFoodModelList(refresh: false);
+    if (cafeteriaType.value == CafeteriaType.firstSh) {
+      getFirstSHFoodModelList(refresh: false);
+    } else {
+      getFoodModelList(refresh: false);
+    }
   }
 
   // 요일 변경
   void updateDayType(DayType newValue) {
     dayType.value = newValue;
-    getFoodModelList(refresh: false);
+    if (cafeteriaType.value == CafeteriaType.firstSh) {
+      getFirstSHFoodModelList(refresh: true);
+    } else {
+      getFoodModelList(refresh: false);
+    }
   }
 
   // 음식 타입 변경
-  void updateFoodType(FoodType newValue) {
+  void updateFoodType(FirstShFoodType newValue) {
     foodType.value = newValue;
-    getFoodModelList(refresh: false);
+    if (cafeteriaType.value == CafeteriaType.firstSh) {
+      getFirstSHFoodModelList(refresh: true);
+    } else {
+      getFoodModelList(refresh: false);
+    }
   }
 
   void getFoodModelList({bool? refresh}) async {
-    try {} catch (e) {
+    try {
+      final List<FoodModel> foodModelList = await repository.getFoodModelList({
+        'day': dayType.value.param,
+        'foodCourt': foodType.value.param,
+      });
+      final List<FoodModel> tempBreakfastList = [];
+      final List<FoodModel> tempLunchList = [];
+      final List<FoodModel> tempDinnerList = [];
+      for (int i = 0; i < foodModelList.length; i++) {
+        if (foodModelList[i].time == TimeType.breakfast) {
+          tempBreakfastList.add(foodModelList[i]);
+        } else if (foodModelList[i].time == TimeType.lunch) {
+          tempLunchList.add(foodModelList[i]);
+        } else if (foodModelList[i].time == TimeType.dinner) {
+          tempDinnerList.add(foodModelList[i]);
+        }
+      }
+      breakfastList.value = tempBreakfastList;
+      lunchList.value = tempLunchList;
+      dinnerList.value = tempDinnerList;
+    } catch (e) {
+      getDialog(e);
+    }
+  }
+
+  void getFirstSHFoodModelList({bool? refresh}) async {
+    try {
+      firstShFoodModelList.value = await repository.getFirstShFoodModelList({
+        'firstHallType': foodType.value.param,
+      });
+    } catch (e) {
       getDialog(e);
     }
   }

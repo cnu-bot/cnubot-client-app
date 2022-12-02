@@ -1,10 +1,13 @@
 import 'package:cnubot_app/app/4_view/0_constant/enum/cafeteria_type.dart';
+import 'package:cnubot_app/app/4_view/0_constant/enum/time_type.dart';
 import 'package:cnubot_app/app/4_view/1_component/1_layout/header/go_to_home_button.dart';
 import 'package:cnubot_app/app/4_view/1_component/1_layout/header/top_circle.dart';
 import 'package:cnubot_app/app/4_view/1_component/1_layout/header/top_logo.dart';
 import 'package:cnubot_app/app/4_view/1_component/1_layout/header/top_text.dart';
 import 'package:cnubot_app/app/4_view/2_screen/6_food/component/cafeteria_listview.dart';
 import 'package:cnubot_app/app/4_view/2_screen/6_food/component/day_list_view.dart';
+import 'package:cnubot_app/app/4_view/2_screen/6_food/component/first_sh_food_category_list_view.dart';
+import 'package:cnubot_app/app/4_view/2_screen/6_food/component/first_sh_list_view.dart';
 import 'package:cnubot_app/app/4_view/2_screen/6_food/component/food_list_view.dart';
 import 'package:cnubot_app/app/4_view/2_screen/6_food/component/operation_time.dart';
 import 'package:cnubot_app/app/4_view/2_screen/6_food/food_controller.dart';
@@ -67,8 +70,8 @@ class FoodScreen extends GetView<FoodController> {
                                             controller.updateCafeteriaType,
                                       ),
                                       controller.cafeteriaType.value ==
-                                              CafeteriaType.studentHall1
-                                          ? FoodListView(
+                                              CafeteriaType.firstSh
+                                          ? FirstShFoodCategoryListView(
                                               currentType:
                                                   controller.foodType.value,
                                               updateFoodType:
@@ -98,7 +101,46 @@ class FoodScreen extends GetView<FoodController> {
                           foodType: controller.foodType.value,
                         ),
                       ),
-                      // 식단 표시
+                      SizedBox(
+                        height: 37.h,
+                      ),
+                      Obx(
+                        () => controller.cafeteriaType.value ==
+                                CafeteriaType.firstSh
+                            // 1학 식단 표시
+                            ? Column(
+                                children: [
+                                  FirstShListView(
+                                    foodType: controller.foodType.value,
+                                  ),
+                                ],
+                              )
+                            :
+                            // 이외 식단 표시
+                            Column(
+                                children: [
+                                  const FoodListView(
+                                    timeType: TimeType.breakfast,
+                                  ),
+                                  SizedBox(
+                                    height: 28.h,
+                                  ),
+                                  const FoodListView(
+                                    timeType: TimeType.lunch,
+                                  ),
+                                  SizedBox(
+                                    height: 28.h,
+                                  ),
+                                  const FoodListView(
+                                    timeType: TimeType.dinner,
+                                  ),
+                                ],
+                              ),
+                      ),
+
+                      SizedBox(
+                        height: 78.h,
+                      ),
                     ],
                   ),
                 ),
