@@ -1,6 +1,6 @@
 import 'package:cnubot_app/app/4_view/0_constant/constant_color.dart';
 import 'package:cnubot_app/app/4_view/0_constant/enum/cafeteria_type.dart';
-import 'package:cnubot_app/app/4_view/0_constant/enum/food_type.dart';
+import 'package:cnubot_app/app/4_view/0_constant/enum/first_sh_food_type.dart';
 import 'package:cnubot_app/app/4_view/1_component/0_button/gray_time_button.dart';
 import 'package:cnubot_app/app/4_view/1_component/1_layout/header/top_text.dart';
 import 'package:cnubot_app/app/4_view/2_screen/6_food/component/operation_time_text.dart';
@@ -15,7 +15,7 @@ class OperationTime extends StatefulWidget {
     required this.foodType,
   }) : super(key: key);
   final CafeteriaType cafeteriaType;
-  final FoodType foodType;
+  final FirstShFoodType foodType;
 
   @override
   State<OperationTime> createState() => _OperationTimeState();
@@ -51,6 +51,7 @@ class _OperationTimeState extends State<OperationTime> {
             radius: Radius.circular(100.r),
             thickness: 4,
             child: CustomScrollView(
+              controller: scrollController,
               scrollDirection: Axis.horizontal,
               physics: const BouncingScrollPhysics(
                 parent: AlwaysScrollableScrollPhysics(),
@@ -77,9 +78,6 @@ class _OperationTimeState extends State<OperationTime> {
                         cafeteriaType: widget.cafeteriaType,
                         foodType: widget.foodType,
                       ),
-                      SizedBox(
-                        width: 18.w,
-                      ),
                     ],
                   ),
                 ),
@@ -102,7 +100,7 @@ class OperationTimeBox extends StatelessWidget {
 
   final String time;
   final CafeteriaType cafeteriaType;
-  final FoodType foodType;
+  final FirstShFoodType foodType;
 
   @override
   Widget build(BuildContext context) {
@@ -111,7 +109,7 @@ class OperationTimeBox extends StatelessWidget {
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            cafeteriaType == CafeteriaType.studentHall1
+            cafeteriaType == CafeteriaType.firstSh
                 ? GrayTimeButton(
                     text: operationTimeInfo[cafeteriaType.displayName]
                         [foodType.displayName][time]['displayName'],
@@ -123,7 +121,7 @@ class OperationTimeBox extends StatelessWidget {
             SizedBox(
               height: 7.h,
             ),
-            cafeteriaType == CafeteriaType.studentHall1
+            cafeteriaType == CafeteriaType.firstSh
                 ? Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -160,9 +158,11 @@ class OperationTimeBox extends StatelessWidget {
                   ),
           ],
         ),
-        SizedBox(
-          width: 10.w,
-        ),
+        time == '저녁'
+            ? const SizedBox.shrink()
+            : SizedBox(
+                width: 10.w,
+              ),
       ],
     );
   }

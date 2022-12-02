@@ -1,5 +1,5 @@
 import 'package:cnubot_app/app/4_view/0_constant/enum/cafeteria_type.dart';
-import 'package:cnubot_app/app/4_view/0_constant/enum/food_type.dart';
+import 'package:cnubot_app/app/4_view/0_constant/enum/first_sh_food_type.dart';
 
 Map<String, dynamic> operationTimeInfo = {
   // 기숙사
@@ -51,9 +51,9 @@ Map<String, dynamic> operationTimeInfo = {
     },
   },
   // 제1 학생회관
-  CafeteriaType.studentHall1.displayName: {
+  CafeteriaType.firstSh.displayName: {
     // 라면&간식
-    FoodType.ramen.displayName: {
+    FirstShFoodType.ramen.displayName: {
       '아침': {
         'displayName': '아침',
         'operationTime': [
@@ -101,7 +101,7 @@ Map<String, dynamic> operationTimeInfo = {
       },
     },
     // 양식
-    FoodType.westernFood.displayName: {
+    FirstShFoodType.westernFood.displayName: {
       '아침': {
         'displayName': '아침',
         'operationTime': [
@@ -149,7 +149,7 @@ Map<String, dynamic> operationTimeInfo = {
       },
     },
     // 스낵
-    FoodType.snack.displayName: {
+    FirstShFoodType.snack.displayName: {
       '아침': {
         'displayName': '아침',
         'operationTime': [
@@ -197,7 +197,7 @@ Map<String, dynamic> operationTimeInfo = {
       },
     },
     // 한식
-    FoodType.koreanFood.displayName: {
+    FirstShFoodType.koreanFood.displayName: {
       '아침': {
         'displayName': '아침',
         'operationTime': [
@@ -245,7 +245,7 @@ Map<String, dynamic> operationTimeInfo = {
       },
     },
     // 일식
-    FoodType.japaneseFood.displayName: {
+    FirstShFoodType.japaneseFood.displayName: {
       '아침': {
         'displayName': '아침',
         'operationTime': [
@@ -293,7 +293,7 @@ Map<String, dynamic> operationTimeInfo = {
       },
     },
     // 중식
-    FoodType.chineseFood.displayName: {
+    FirstShFoodType.chineseFood.displayName: {
       '아침': {
         'displayName': '아침',
         'operationTime': [
@@ -342,9 +342,9 @@ Map<String, dynamic> operationTimeInfo = {
     },
   },
   // 제2 학생회관
-  CafeteriaType.studentHall2.displayName: {
+  CafeteriaType.secondSh.displayName: {
     '아침': {
-      'displayName': '천원의 아침',
+      'displayName': '아침',
       'operationTime': [
         {
           'text': '08:00-09:00',
@@ -390,9 +390,9 @@ Map<String, dynamic> operationTimeInfo = {
     },
   },
   // 제3 학생회관
-  CafeteriaType.studentHall3.displayName: {
+  CafeteriaType.thirdSh.displayName: {
     '아침': {
-      'displayName': '천원의 아침',
+      'displayName': '아침',
       'operationTime': [
         {
           'text': '08:00-09:00',
@@ -438,9 +438,9 @@ Map<String, dynamic> operationTimeInfo = {
     },
   },
   // 제4 학생회관
-  CafeteriaType.studentHall4.displayName: {
+  CafeteriaType.fourthSh.displayName: {
     '아침': {
-      'displayName': '천원의 아침',
+      'displayName': '아침',
       'operationTime': [
         {
           'text': '08:00-09:00',
@@ -488,7 +488,7 @@ Map<String, dynamic> operationTimeInfo = {
   // 생활과학대학
   CafeteriaType.collegeOfLifeSciences.displayName: {
     '아침': {
-      'displayName': '천원의 아침',
+      'displayName': '아침',
       'operationTime': [
         {
           'text': '08:00-09:00',
