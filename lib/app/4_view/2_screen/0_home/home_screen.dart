@@ -30,6 +30,7 @@ class HomeScreen extends GetView<HomeController> {
       bottomNavigationBar: Obx(
         () => BottomNavBar(
           currentPage: controller.currentPage.value,
+          visible: controller.bnbVisible.value,
           updateCurrentPage: controller.updateCurrentPage,
         ),
       ),

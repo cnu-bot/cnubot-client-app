@@ -6,6 +6,9 @@ import 'package:cnubot_app/app/4_view/0_constant/enum/cafeteria_type.dart';
 import 'package:cnubot_app/app/4_view/0_constant/enum/day_type.dart';
 import 'package:cnubot_app/app/4_view/0_constant/enum/first_sh_food_type.dart';
 import 'package:cnubot_app/app/4_view/0_constant/enum/time_type.dart';
+import 'package:cnubot_app/app/4_view/2_screen/0_home/home_controller.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'package:get/get.dart';
 
 class FoodController extends GetxController {
@@ -27,9 +30,16 @@ class FoodController extends GetxController {
   // 1학 리스트
   RxList<FirstShFoodModel> firstShFoodModelList = <FirstShFoodModel>[].obs;
 
+  ScrollController? foodScrollController = ScrollController();
+
   @override
   void onInit() async {
     super.onInit();
+    foodScrollController!.addListener(() {
+      HomeController.to.updateBnbVisible(
+          foodScrollController!.position.userScrollDirection ==
+              ScrollDirection.forward);
+    });
     getFoodModelList(refresh: true);
     getFirstSHFoodModelList(refresh: true);
   }

@@ -4,12 +4,18 @@ import 'package:get/get.dart';
 
 class HomeController extends GetxController {
   final ShuttleRepository repository;
+  static HomeController get to => Get.find();
 
   HomeController({required this.repository});
 
   Rx<NavPage> currentPage = NavPage.notice.obs;
+  RxBool bnbVisible = true.obs;
 
   updateCurrentPage(int index) {
     currentPage.value = NavPage.getByIndex(index);
+  }
+
+  updateBnbVisible(bool newValue) {
+    bnbVisible.value = newValue;
   }
 }

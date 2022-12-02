@@ -29,6 +29,7 @@ class FoodScreen extends GetView<FoodController> {
         children: [
           Expanded(
             child: CustomScrollView(
+              controller: controller.foodScrollController,
               physics: const BouncingScrollPhysics(
                 parent: AlwaysScrollableScrollPhysics(),
               ),
