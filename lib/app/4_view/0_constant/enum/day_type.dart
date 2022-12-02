@@ -18,4 +18,8 @@ enum DayType {
         (value) => value.displayName == displayName,
         orElse: () => DayType.undefined);
   }
+  factory DayType.getByParam(String param) {
+    return DayType.values.firstWhere((value) => value.param == param,
+        orElse: () => DayType.undefined);
+  }
 }
