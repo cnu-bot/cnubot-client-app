@@ -1,5 +1,5 @@
 import 'package:cnubot_app/app/4_view/0_constant/enum/white_horse_square_type.dart';
-import 'package:cnubot_app/app/4_view/1_component/0_button/gray_button.dart';
+import 'package:cnubot_app/app/4_view/1_component/0_button/light_gray_button.dart';
 import 'package:flutter/material.dart';
 
 class WhiteHorseSquareButton extends StatelessWidget {
@@ -20,7 +20,7 @@ class WhiteHorseSquareButton extends StatelessWidget {
           onTap!(whiteHorseSquareType);
         }
       },
-      child: GrayRoundButton(
+      child: LightGrayButton(
         isSelected: whiteHorseSquareType == currentType,
         text: whiteHorseSquareType.displayName,
       ),

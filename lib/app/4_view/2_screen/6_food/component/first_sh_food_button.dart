@@ -1,5 +1,5 @@
 import 'package:cnubot_app/app/4_view/0_constant/enum/first_sh_food_type.dart';
-import 'package:cnubot_app/app/4_view/1_component/0_button/gray_button.dart';
+import 'package:cnubot_app/app/4_view/1_component/0_button/light_gray_button.dart';
 import 'package:flutter/material.dart';
 
 class FirstShFoodButton extends StatelessWidget {
@@ -20,7 +20,7 @@ class FirstShFoodButton extends StatelessWidget {
           onTap!(foodType);
         }
       },
-      child: GrayRoundButton(
+      child: LightGrayButton(
         isSelected: foodType == currentType,
         text: foodType.displayName,
       ),
