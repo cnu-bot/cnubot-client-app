@@ -18,6 +18,11 @@ class BottomNavBar extends StatelessWidget {
   final NavPage currentPage;
   final bool visible;
   final void Function(int)? updateCurrentPage;
+
+  bool isSelected(int currentPageIndex) {
+    return currentPage.index == currentPageIndex;
+  }
+
   @override
   Widget build(BuildContext context) {
     final double bnbHeight = Platform.isIOS ? 110.h : 87.h;
@@ -37,28 +42,28 @@ class BottomNavBar extends StatelessWidget {
           BottomNavigationBarItem(
             icon: NavItem(
               assetName: 'n',
-              selected: currentPage.index == 0 ? true : false,
+              selected: isSelected(0),
             ),
             label: NavPage.notice.displayName,
           ),
           BottomNavigationBarItem(
             icon: NavItem(
               assetName: 'm',
-              selected: currentPage.index == 1 ? true : false,
+              selected: isSelected(1),
             ),
             label: NavPage.food.displayName,
           ),
           BottomNavigationBarItem(
             icon: NavItem(
               assetName: 't',
-              selected: currentPage.index == 2 ? true : false,
+              selected: isSelected(2),
             ),
             label: NavPage.bus.displayName,
           ),
           BottomNavigationBarItem(
             icon: NavItem(
               assetName: 'l',
-              selected: currentPage.index == 3 ? true : false,
+              selected: isSelected(3),
             ),
             label: NavPage.library.displayName,
           ),
