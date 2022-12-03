@@ -41,14 +41,14 @@ class FoodController extends GetxController {
               ScrollDirection.forward);
     });
     getFoodModelList(refresh: true);
-    getFirstSHFoodModelList(refresh: true);
+    getFirstShFoodModelList(refresh: true);
   }
 
   // 상위 분류 변경
   void updateCafeteriaType(CafeteriaType newValue) {
     cafeteriaType.value = newValue;
     if (cafeteriaType.value == CafeteriaType.firstSh) {
-      getFirstSHFoodModelList(refresh: false);
+      getFirstShFoodModelList(refresh: false);
     } else {
       getFoodModelList(refresh: false);
     }
@@ -58,7 +58,7 @@ class FoodController extends GetxController {
   void updateDayType(DayType newValue) {
     dayType.value = newValue;
     if (cafeteriaType.value == CafeteriaType.firstSh) {
-      getFirstSHFoodModelList(refresh: true);
+      getFirstShFoodModelList(refresh: true);
     } else {
       getFoodModelList(refresh: false);
     }
@@ -68,7 +68,7 @@ class FoodController extends GetxController {
   void updateFoodType(FirstShFoodType newValue) {
     foodType.value = newValue;
     if (cafeteriaType.value == CafeteriaType.firstSh) {
-      getFirstSHFoodModelList(refresh: true);
+      getFirstShFoodModelList(refresh: true);
     } else {
       getFoodModelList(refresh: false);
     }
@@ -106,7 +106,7 @@ class FoodController extends GetxController {
     }
   }
 
-  void getFirstSHFoodModelList({bool? refresh}) async {
+  void getFirstShFoodModelList({bool? refresh}) async {
     try {
       firstShFoodModelList.value = await repository.getFirstShFoodModelList({
         'firstHallType': foodType.value.param,
