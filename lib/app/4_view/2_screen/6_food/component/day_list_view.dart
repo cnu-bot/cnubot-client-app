@@ -1,5 +1,5 @@
 import 'package:cnubot_app/app/4_view/0_constant/enum/day_type.dart';
-import 'package:cnubot_app/app/4_view/2_screen/6_food/component/dat_button.dart';
+import 'package:cnubot_app/app/4_view/2_screen/6_food/component/day_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
