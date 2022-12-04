@@ -14,7 +14,9 @@ class FoodCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 150.w,
+      constraints: BoxConstraints(
+        minWidth: 163.w,
+      ),
       decoration: BoxDecoration(
         color: kSecondaryGray,
         borderRadius: BorderRadius.only(
@@ -56,9 +58,6 @@ class FoodCard extends StatelessWidget {
                     FoodNameText(
                       text: foodModel.foods![i],
                     ),
-                    SizedBox(
-                      width: 3.w,
-                    ),
                     FoodOriginButton(
                       text: foodModel.foods![i],
                     ),
@@ -84,10 +83,17 @@ class FoodNameText extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Text(
-      convertFoodName(text),
-      style: kBody4,
-    );
+    final String foodNameText = convertFoodName(text);
+
+    return foodNameText.isEmpty
+        ? const SizedBox.shrink()
+        : Container(
+            margin: EdgeInsets.only(right: 3.w),
+            child: Text(
+              foodNameText,
+              style: kBody4,
+            ),
+          );
   }
 
   String convertFoodName(String foodFullName) {
