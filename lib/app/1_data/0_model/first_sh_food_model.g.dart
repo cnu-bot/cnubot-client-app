@@ -11,7 +11,11 @@ _$_FirstShFoodModel _$$_FirstShFoodModelFromJson(Map<String, dynamic> json) =>
       foodName: json['foodName'] as String,
       type: $enumDecode(_$FirstShFoodTypeEnumMap, json['type']),
       price: json['price'] as String,
+<<<<<<< HEAD
       imageUrl: json['imageUrl'] as String?,
+=======
+      imageUrl: json['imageUrl'] as String,
+>>>>>>> origin/develop
     );
 
 Map<String, dynamic> _$$_FirstShFoodModelToJson(_$_FirstShFoodModel instance) =>

@@ -14,9 +14,13 @@ class FoodCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+<<<<<<< HEAD
       constraints: BoxConstraints(
         minWidth: 163.w,
       ),
+=======
+      width: 150.w,
+>>>>>>> origin/develop
       decoration: BoxDecoration(
         color: kSecondaryGray,
         borderRadius: BorderRadius.only(
@@ -58,6 +62,12 @@ class FoodCard extends StatelessWidget {
                     FoodNameText(
                       text: foodModel.foods![i],
                     ),
+<<<<<<< HEAD
+=======
+                    SizedBox(
+                      width: 3.w,
+                    ),
+>>>>>>> origin/develop
                     FoodOriginButton(
                       text: foodModel.foods![i],
                     ),
@@ -83,6 +93,7 @@ class FoodNameText extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+<<<<<<< HEAD
     final String foodNameText = convertFoodName(text);
 
     return foodNameText.isEmpty
@@ -94,6 +105,12 @@ class FoodNameText extends StatelessWidget {
               style: kBody4,
             ),
           );
+=======
+    return Text(
+      convertFoodName(text),
+      style: kBody4,
+    );
+>>>>>>> origin/develop
   }
 
   String convertFoodName(String foodFullName) {

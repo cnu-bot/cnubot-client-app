@@ -51,65 +51,7 @@ class FoodProvider {
       refresh: refresh,
     );
     final List<FirstShFoodModel> firstStudentHallFoodModel = [];
-    // List<dynamic> resultList = [];
-    // if (paramMap['firstHallType'] == 'CHINESE_FOOD' ||
-    //     paramMap['firstHallType'] == 'WESTERN_FOOD' ||
-    //     paramMap['firstHallType'] == 'RAMYUN_AND_SNACK') {
-    //   resultList = [
-    //     {
-    //       'foodName': '차돌온면',
-    //       'type': 'CHINESE_FOOD',
-    //       'price': '6500',
-    //       'imageUrl':
-    //           'https://i3.ruliweb.com/ori/21/12/08/17d99fad23c1bd18.jpg',
-    //     },
-    //     {
-    //       'foodName': '매운차돌온면',
-    //       'type': 'CHINESE_FOOD',
-    //       'price': '6500',
-    //       'imageUrl':
-    //           'https://i3.ruliweb.com/ori/21/12/08/17d99fad23c1bd18.jpg',
-    //     },
-    //     {
-    //       'foodName': '비빔면',
-    //       'type': 'CHINESE_FOOD',
-    //       'price': '6500',
-    //       'imageUrl':
-    //           'https://i3.ruliweb.com/ori/21/12/08/17d99fad23c1bd18.jpg',
-    //     },
-    //     {
-    //       'foodName': '중국식물냉면',
-    //       'type': 'CHINESE_FOOD',
-    //       'price': '6500',
-    //       'imageUrl':
-    //           'https://i3.ruliweb.com/ori/21/12/08/17d99fad23c1bd18.jpg',
-    //     },
-    //   ];
-    // } else {
-    //   resultList = [
-    //     {
-    //       'foodName': '소고기고추장비빔밥',
-    //       'type': 'KOREAN_FOOD',
-    //       'price': '6500',
-    //       'imageUrl':
-    //           'https://health.chosun.com/site/data/img_dir/2021/01/27/2021012702508_0.jpg',
-    //     },
-    //     {
-    //       'foodName': '해장 황태 콩나물국',
-    //       'type': 'KOREAN_FOOD',
-    //       'price': '6500',
-    //       'imageUrl':
-    //           'https://health.chosun.com/site/data/img_dir/2021/01/27/2021012702508_0.jpg',
-    //     },
-    //     {
-    //       'foodName': '김치찌개',
-    //       'type': 'KOREAN_FOOD',
-    //       'price': '6500',
-    //       'imageUrl':
-    //           'https://health.chosun.com/site/data/img_dir/2021/01/27/2021012702508_0.jpg',
-    //     },
-    //   ];
-    // }
+
     for (int i = 0; i < resultList.length; i++) {
       resultList[i]['type'] =
           FirstShFoodType.getByParam(resultList[i]['type']).name;
