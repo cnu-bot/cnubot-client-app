@@ -23,11 +23,7 @@ mixin _$FirstShFoodModel {
   String get foodName => throw _privateConstructorUsedError;
   FirstShFoodType get type => throw _privateConstructorUsedError;
   String get price => throw _privateConstructorUsedError;
-<<<<<<< HEAD
   String? get imageUrl => throw _privateConstructorUsedError;
-=======
-  String get imageUrl => throw _privateConstructorUsedError;
->>>>>>> origin/develop
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -42,11 +38,7 @@ abstract class $FirstShFoodModelCopyWith<$Res> {
       _$FirstShFoodModelCopyWithImpl<$Res, FirstShFoodModel>;
   @useResult
   $Res call(
-<<<<<<< HEAD
       {String foodName, FirstShFoodType type, String price, String? imageUrl});
-=======
-      {String foodName, FirstShFoodType type, String price, String imageUrl});
->>>>>>> origin/develop
 }
 
 /// @nodoc
@@ -65,11 +57,7 @@ class _$FirstShFoodModelCopyWithImpl<$Res, $Val extends FirstShFoodModel>
     Object? foodName = null,
     Object? type = null,
     Object? price = null,
-<<<<<<< HEAD
     Object? imageUrl = freezed,
-=======
-    Object? imageUrl = null,
->>>>>>> origin/develop
   }) {
     return _then(_value.copyWith(
       foodName: null == foodName
@@ -84,17 +72,10 @@ class _$FirstShFoodModelCopyWithImpl<$Res, $Val extends FirstShFoodModel>
           ? _value.price
           : price // ignore: cast_nullable_to_non_nullable
               as String,
-<<<<<<< HEAD
       imageUrl: freezed == imageUrl
           ? _value.imageUrl
           : imageUrl // ignore: cast_nullable_to_non_nullable
               as String?,
-=======
-      imageUrl: null == imageUrl
-          ? _value.imageUrl
-          : imageUrl // ignore: cast_nullable_to_non_nullable
-              as String,
->>>>>>> origin/develop
     ) as $Val);
   }
 }
@@ -108,11 +89,7 @@ abstract class _$$_FirstShFoodModelCopyWith<$Res>
   @override
   @useResult
   $Res call(
-<<<<<<< HEAD
       {String foodName, FirstShFoodType type, String price, String? imageUrl});
-=======
-      {String foodName, FirstShFoodType type, String price, String imageUrl});
->>>>>>> origin/develop
 }
 
 /// @nodoc
@@ -129,11 +106,7 @@ class __$$_FirstShFoodModelCopyWithImpl<$Res>
     Object? foodName = null,
     Object? type = null,
     Object? price = null,
-<<<<<<< HEAD
     Object? imageUrl = freezed,
-=======
-    Object? imageUrl = null,
->>>>>>> origin/develop
   }) {
     return _then(_$_FirstShFoodModel(
       foodName: null == foodName
@@ -148,17 +121,10 @@ class __$$_FirstShFoodModelCopyWithImpl<$Res>
           ? _value.price
           : price // ignore: cast_nullable_to_non_nullable
               as String,
-<<<<<<< HEAD
       imageUrl: freezed == imageUrl
           ? _value.imageUrl
           : imageUrl // ignore: cast_nullable_to_non_nullable
               as String?,
-=======
-      imageUrl: null == imageUrl
-          ? _value.imageUrl
-          : imageUrl // ignore: cast_nullable_to_non_nullable
-              as String,
->>>>>>> origin/develop
     ));
   }
 }
@@ -182,11 +148,7 @@ class _$_FirstShFoodModel implements _FirstShFoodModel {
   @override
   final String price;
   @override
-<<<<<<< HEAD
   final String? imageUrl;
-=======
-  final String imageUrl;
->>>>>>> origin/develop
 
   @override
   String toString() {
@@ -229,11 +191,7 @@ abstract class _FirstShFoodModel implements FirstShFoodModel {
       {required final String foodName,
       required final FirstShFoodType type,
       required final String price,
-<<<<<<< HEAD
       required final String? imageUrl}) = _$_FirstShFoodModel;
-=======
-      required final String imageUrl}) = _$_FirstShFoodModel;
->>>>>>> origin/develop
 
   factory _FirstShFoodModel.fromJson(Map<String, dynamic> json) =
       _$_FirstShFoodModel.fromJson;
@@ -245,11 +203,7 @@ abstract class _FirstShFoodModel implements FirstShFoodModel {
   @override
   String get price;
   @override
-<<<<<<< HEAD
   String? get imageUrl;
-=======
-  String get imageUrl;
->>>>>>> origin/develop
   @override
   @JsonKey(ignore: true)
   _$$_FirstShFoodModelCopyWith<_$_FirstShFoodModel> get copyWith =>
