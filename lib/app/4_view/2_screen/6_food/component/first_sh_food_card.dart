@@ -27,7 +27,7 @@ class FirstShFoodCard extends StatelessWidget {
                 topRight: Radius.circular(18.r),
               ),
               child: CachedNetworkImage(
-                  imageUrl: firstShFoodModel.imageUrl,
+                  imageUrl: firstShFoodModel.imageUrl ?? '',
                   imageBuilder: (context, imageProvider) {
                     return Container(
                       width: 110.w,
@@ -89,7 +89,7 @@ class FirstShFoodCard extends StatelessWidget {
                 SizedBox(
                   width: 60.w,
                   child: Text(
-                    firstShFoodModel.foodName,
+                    firstShFoodModel.foodName.replaceAll(' ', '\n'),
                     textAlign: TextAlign.center,
                     style: kHeadline5.copyWith(
                       color: kBlue00,
