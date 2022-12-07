@@ -6,6 +6,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shimmer/shimmer.dart';
 
+const String noFoodImageLink =
+    'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQkAAAC4CAMAAADHV+kyAAAAM1BMVEX////MzMyrq6vX19fq6urv7+/Y2NjAwMD19fX5+fmxsbHQ0NDf39+1tbXl5eXc3Ny7u7tOeLhWAAADrElEQVR4nO2b2WKjIBRAFTSiGMn/f+1wWdSYNtOxaTPiOQ+NEUzhyGVxqSoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACiQfrroXVym/t1lfym9rneji1Lh9ouoa/fu0r8S+x0T9t2lfyWxmV/+mRhU7y79K9ndyF2JJto9B7aYSGAic2YTfeO0m6dTJzbRxAHXTvHreU008ywiqjitCbOaUIX8pzUxrkxcZMdZTfTrWbmVXvO0Ju7WG6bCBCaq9WWMU0dHNa1MhBXbaU2su0wJjrOYMKNrNrvaWUVMOYcJI7UetzsvwYNOuU9hIkXCVkVlpmma857CRB4npmcHnsHEcrn7mYoTmFiPl9tuc0X5Jpp6zSppc5uneBPm/gaIzWmNtfexUrqJfnsnyIZpVAyZOxWlm7jUW0RF7x570MJNjA8i5MLlNC+/Vj1o2SamD0Tcs6go2kT7VxErayWbMF+5b27vtL2t2D/AYuJh2PhERRxMSjbxOGw8VVGuiY+GjU9UhNlmsSb+Pmws6JKvY35l2FiQWz+FmvjSsLHClWri3x9FdIWa2PEo4lSkiV0Pp+oSTezn3aV/JZjIYCKDiQwmMpjIYCLDWw0Z3nTJ8PbTDG/EAQAAAAAAAPwuWocn9Y3W8tG7uqtdvyQaSUmXH5zW8TmzlDlsuq7rnAl5I+YXC/9SlFLy1ESjlP87DUoY2jmxkRQVZfmNaMClPWEroMMPBZ484f1/48veVcmEGdTVn9VBDSYniomruskXO5u4xmO8ORUOuCkneeujt4mrnMZgolaDxEE/qDonionuFprN1ecMJlq/oUKFr8lIk/IeGn8q1TWZGFS8Rm1lT0wMJpzsn1TXRRO1sp20AomXafVDhzfh6+OiiVyxMXQa1WzCqEHqPyYTg2rH4Mof1K9+6PAmfBMY+mQiVqbZmKg6NfbeRjQhFvrQz8Z8nbD0mG+ryXfxRff9gn5uYooREk10EiuddCUxX6q/Urfk5KBIJWRUfBYdsbc00YRJ535YouNO42EJlZaKKvnIPeYtJyYTOoybwUSeQvgpRZvUFWSiiQ38s1E0NIQxmbjFbrOLTeXWV0WZ8PVKM6vBarudWUnot00VTbRpKjHKp8ysrNZdNBFnVof1EU206slse+4ExUSOHN9w3BIqq7FDP/yLg5AWU2NagY22s+NmBTa/TD36E+7ySR/DfuP8AeEN87wCO2ybAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAf5w/pNR2oA/UcowAAAABJRU5ErkJggg==';
+
 class FirstShFoodCard extends StatelessWidget {
   const FirstShFoodCard({
     Key? key,
@@ -27,7 +30,7 @@ class FirstShFoodCard extends StatelessWidget {
                 topRight: Radius.circular(18.r),
               ),
               child: CachedNetworkImage(
-                  imageUrl: firstShFoodModel.imageUrl ?? '',
+                  imageUrl: firstShFoodModel.imageUrl ?? noFoodImageLink,
                   imageBuilder: (context, imageProvider) {
                     return Container(
                       width: 110.w,
