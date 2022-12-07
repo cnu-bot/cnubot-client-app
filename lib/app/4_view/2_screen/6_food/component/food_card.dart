@@ -1,4 +1,5 @@
 import 'package:cnubot_app/app/1_data/0_model/food_model.dart';
+import 'package:cnubot_app/app/3_util/food_util.dart';
 import 'package:cnubot_app/app/4_view/0_constant/constant_color.dart';
 import 'package:cnubot_app/app/4_view/0_constant/constant_text_style.dart';
 import 'package:flutter/material.dart';
@@ -95,10 +96,6 @@ class FoodNameText extends StatelessWidget {
             ),
           );
   }
-
-  String convertFoodName(String foodFullName) {
-    return foodFullName.split('[')[0];
-  }
 }
 
 class FoodOriginButton extends StatelessWidget {
@@ -127,14 +124,5 @@ class FoodOriginButton extends StatelessWidget {
               style: kBody6,
             ),
           );
-  }
-
-  String convertOrigin(String foodFullName) {
-    final RegExp exp = RegExp(r'(\[.*\])');
-    final RegExpMatch? match = exp.firstMatch(foodFullName);
-    if (match == null) return '';
-    String origin = match[0].toString();
-    origin = origin.replaceAll('[', '').replaceAll(']', '');
-    return origin;
   }
 }
