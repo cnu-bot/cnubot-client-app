@@ -9,7 +9,7 @@ class FirstShFoodModel with _$FirstShFoodModel {
     required String foodName,
     required FirstShFoodType type,
     required String price,
-    required String imageUrl,
+    required String? imageUrl,
   }) = _FirstShFoodModel;
 
   factory FirstShFoodModel.fromJson(Map<String, Object?> json) =>

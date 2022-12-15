@@ -3,6 +3,7 @@ import 'package:cnubot_app/app/4_view/0_constant/constant_color.dart';
 import 'package:cnubot_app/app/4_view/0_constant/constant_text_style.dart';
 import 'package:cnubot_app/app/4_view/0_constant/enum/time_type.dart';
 import 'package:cnubot_app/app/4_view/2_screen/6_food/component/food_card.dart';
+import 'package:cnubot_app/app/4_view/2_screen/6_food/component/no_food_card.dart';
 import 'package:cnubot_app/app/4_view/2_screen/6_food/food_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -53,39 +54,54 @@ class FoodListView extends GetView<FoodController> {
           ),
         ),
         Column(
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            SizedBox(
-              width: 375.w,
-              height: 200.h,
-              child: Obx(() {
-                List<FoodModel> foodModelList = [];
-                switch (timeType) {
-                  case TimeType.breakfast:
-                    foodModelList = controller.breakfastList;
-                    break;
-                  case TimeType.lunch:
-                    foodModelList = controller.lunchList;
-                    break;
-                  case TimeType.dinner:
-                    foodModelList = controller.dinnerList;
-                    break;
-                  case TimeType.undefined:
-                    break;
-                }
-                return ListView.builder(
+            Obx(() {
+              List<FoodModel> foodModelList = [];
+              switch (timeType) {
+                case TimeType.breakfast:
+                  foodModelList = controller.breakfastList;
+                  break;
+                case TimeType.lunch:
+                  foodModelList = controller.lunchList;
+                  break;
+                case TimeType.dinner:
+                  foodModelList = controller.dinnerList;
+                  break;
+                case TimeType.undefined:
+                  break;
+              }
+              if (foodModelList.isEmpty) {
+                return SizedBox(
+                  height: 160.h,
+                  child: Padding(
+                    padding: EdgeInsets.fromLTRB(18.w, 0, 0.w, 0),
+                    child: Row(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: const [
+                        NoFoodCard(text: '직원'),
+                        NoFoodCard(text: '학생'),
+                      ],
+                    ),
+                  ),
+                );
+              }
+              return SizedBox(
+                height: 250.h,
+                child: ListView.builder(
                   scrollDirection: Axis.horizontal,
                   physics: const NeverScrollableScrollPhysics(),
                   itemCount: foodModelList.length,
-                  padding: EdgeInsets.fromLTRB(11.w, 15.h, 0, 0),
-                  shrinkWrap: true,
+                  padding: EdgeInsets.fromLTRB(18.w, 15.h, 0, 0),
                   itemBuilder: (context, index) {
                     return FoodCard(
                       foodModel: foodModelList[index],
                     );
                   },
-                );
-              }),
-            ),
+                ),
+              );
+            }),
           ],
         ),
       ],

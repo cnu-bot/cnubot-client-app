@@ -76,9 +76,14 @@ class FoodController extends GetxController {
 
   void getFoodModelList({bool? refresh}) async {
     try {
+      DayType dayParam = dayType.value;
+      if (dayParam == DayType.today) {
+        final int weekDay = DateTime.now().weekday;
+        dayParam = DayType.values[weekDay];
+      }
       final List<FoodModel> foodModelList = await repository.getFoodModelList({
-        'day': dayType.value.param,
-        'foodCourt': foodType.value.param,
+        'day': dayParam.param,
+        'foodCourt': cafeteriaType.value.param,
       });
       final List<FoodModel> tempBreakfastList = [];
       final List<FoodModel> tempLunchList = [];

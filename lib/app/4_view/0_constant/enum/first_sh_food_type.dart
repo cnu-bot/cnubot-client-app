@@ -4,7 +4,7 @@ enum FirstShFoodType {
   westernFood('양식', 'WESTERN_FOOD'),
   japaneseFood('일식', 'JAPANESE_FOOD'),
   chineseFood('중식', 'CHINESE_FOOD'),
-  snack('스낵', 'SNACK'),
+  snack('스낵', 'FUSION_SNACK'),
   undefined('', '');
 
   const FirstShFoodType(this.displayName, this.param);

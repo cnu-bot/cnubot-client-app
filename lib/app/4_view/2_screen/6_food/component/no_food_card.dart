@@ -1,23 +1,21 @@
-import 'package:cnubot_app/app/1_data/0_model/food_model.dart';
 import 'package:cnubot_app/app/3_util/food_util.dart';
 import 'package:cnubot_app/app/4_view/0_constant/constant_color.dart';
 import 'package:cnubot_app/app/4_view/0_constant/constant_text_style.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class FoodCard extends StatelessWidget {
-  const FoodCard({
+class NoFoodCard extends StatelessWidget {
+  const NoFoodCard({
     Key? key,
-    required this.foodModel,
+    required this.text,
   }) : super(key: key);
-  final FoodModel foodModel;
+  final String text;
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      constraints: BoxConstraints(
-        minWidth: 163.w,
-      ),
+      width: 163.w,
+      height: 154.h,
       decoration: BoxDecoration(
         color: kSecondaryGray,
         borderRadius: BorderRadius.only(
@@ -26,49 +24,27 @@ class FoodCard extends StatelessWidget {
         ),
       ),
       padding: EdgeInsets.fromLTRB(10.w, 10.h, 10.w, 10.h),
-      margin: EdgeInsets.fromLTRB(0, 0, 13.w, 0),
+      margin: EdgeInsets.fromLTRB(0, 15.w, 13.w, 0),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Row(
-            children: [
-              Text(
-                foodModel.type,
-                style: kBody1.copyWith(color: kBlue00),
-              ),
-              SizedBox(
-                width: 2.w,
-              ),
-              foodModel.calorie == null
-                  ? const SizedBox.shrink()
-                  : Text(
-                      '${foodModel.calorie}kcal',
-                      style: kBody5.copyWith(color: kGray6C),
-                    ),
-            ],
+          Text(
+            text,
+            style: kBody1.copyWith(color: kBlue00),
           ),
           SizedBox(
             height: 9.h,
           ),
-          for (int i = 0; i < foodModel.foods!.length; i++)
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Row(
-                  children: [
-                    FoodNameText(
-                      text: foodModel.foods![i],
-                    ),
-                    FoodOriginButton(
-                      text: foodModel.foods![i],
-                    ),
-                  ],
+          Expanded(
+              child: Row(
+            children: const [
+              Expanded(
+                child: Center(
+                  child: FoodNameText(text: '미운영'),
                 ),
-                SizedBox(
-                  height: 4.h,
-                ),
-              ],
-            ),
+              ),
+            ],
+          )),
         ],
       ),
     );

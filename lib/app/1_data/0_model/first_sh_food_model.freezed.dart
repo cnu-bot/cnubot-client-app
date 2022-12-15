@@ -23,7 +23,7 @@ mixin _$FirstShFoodModel {
   String get foodName => throw _privateConstructorUsedError;
   FirstShFoodType get type => throw _privateConstructorUsedError;
   String get price => throw _privateConstructorUsedError;
-  String get imageUrl => throw _privateConstructorUsedError;
+  String? get imageUrl => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -38,7 +38,7 @@ abstract class $FirstShFoodModelCopyWith<$Res> {
       _$FirstShFoodModelCopyWithImpl<$Res, FirstShFoodModel>;
   @useResult
   $Res call(
-      {String foodName, FirstShFoodType type, String price, String imageUrl});
+      {String foodName, FirstShFoodType type, String price, String? imageUrl});
 }
 
 /// @nodoc
@@ -57,7 +57,7 @@ class _$FirstShFoodModelCopyWithImpl<$Res, $Val extends FirstShFoodModel>
     Object? foodName = null,
     Object? type = null,
     Object? price = null,
-    Object? imageUrl = null,
+    Object? imageUrl = freezed,
   }) {
     return _then(_value.copyWith(
       foodName: null == foodName
@@ -72,10 +72,10 @@ class _$FirstShFoodModelCopyWithImpl<$Res, $Val extends FirstShFoodModel>
           ? _value.price
           : price // ignore: cast_nullable_to_non_nullable
               as String,
-      imageUrl: null == imageUrl
+      imageUrl: freezed == imageUrl
           ? _value.imageUrl
           : imageUrl // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ) as $Val);
   }
 }
@@ -89,7 +89,7 @@ abstract class _$$_FirstShFoodModelCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {String foodName, FirstShFoodType type, String price, String imageUrl});
+      {String foodName, FirstShFoodType type, String price, String? imageUrl});
 }
 
 /// @nodoc
@@ -106,7 +106,7 @@ class __$$_FirstShFoodModelCopyWithImpl<$Res>
     Object? foodName = null,
     Object? type = null,
     Object? price = null,
-    Object? imageUrl = null,
+    Object? imageUrl = freezed,
   }) {
     return _then(_$_FirstShFoodModel(
       foodName: null == foodName
@@ -121,10 +121,10 @@ class __$$_FirstShFoodModelCopyWithImpl<$Res>
           ? _value.price
           : price // ignore: cast_nullable_to_non_nullable
               as String,
-      imageUrl: null == imageUrl
+      imageUrl: freezed == imageUrl
           ? _value.imageUrl
           : imageUrl // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ));
   }
 }
@@ -148,7 +148,7 @@ class _$_FirstShFoodModel implements _FirstShFoodModel {
   @override
   final String price;
   @override
-  final String imageUrl;
+  final String? imageUrl;
 
   @override
   String toString() {
@@ -191,7 +191,7 @@ abstract class _FirstShFoodModel implements FirstShFoodModel {
       {required final String foodName,
       required final FirstShFoodType type,
       required final String price,
-      required final String imageUrl}) = _$_FirstShFoodModel;
+      required final String? imageUrl}) = _$_FirstShFoodModel;
 
   factory _FirstShFoodModel.fromJson(Map<String, dynamic> json) =
       _$_FirstShFoodModel.fromJson;
@@ -203,7 +203,7 @@ abstract class _FirstShFoodModel implements FirstShFoodModel {
   @override
   String get price;
   @override
-  String get imageUrl;
+  String? get imageUrl;
   @override
   @JsonKey(ignore: true)
   _$$_FirstShFoodModelCopyWith<_$_FirstShFoodModel> get copyWith =>
