@@ -1,5 +1,6 @@
 import 'package:cnubot_app/app/0_routes/app_pages.dart';
 import 'package:cnubot_app/app/1_data/3_environment/environment.dart';
+import 'package:cnubot_app/app/4_view/0_constant/constant_color.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -28,6 +29,7 @@ class MyApp extends StatelessWidget {
           initialRoute: AppPages.initial,
           getPages: AppPages.routes,
           theme: ThemeData(
+            scaffoldBackgroundColor: kWhiteColor,
             primarySwatch: Colors.blue,
           ),
         );

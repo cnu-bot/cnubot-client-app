@@ -34,38 +34,42 @@ mixin _$ShuttleModel {
 abstract class $ShuttleModelCopyWith<$Res> {
   factory $ShuttleModelCopyWith(
           ShuttleModel value, $Res Function(ShuttleModel) then) =
-      _$ShuttleModelCopyWithImpl<$Res>;
+      _$ShuttleModelCopyWithImpl<$Res, ShuttleModel>;
+  @useResult
   $Res call({int id, String name, List<String>? emailPrefixList});
 }
 
 /// @nodoc
-class _$ShuttleModelCopyWithImpl<$Res> implements $ShuttleModelCopyWith<$Res> {
+class _$ShuttleModelCopyWithImpl<$Res, $Val extends ShuttleModel>
+    implements $ShuttleModelCopyWith<$Res> {
   _$ShuttleModelCopyWithImpl(this._value, this._then);
 
-  final ShuttleModel _value;
   // ignore: unused_field
-  final $Res Function(ShuttleModel) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = freezed,
-    Object? name = freezed,
+    Object? id = null,
+    Object? name = null,
     Object? emailPrefixList = freezed,
   }) {
     return _then(_value.copyWith(
-      id: id == freezed
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as int,
-      name: name == freezed
+      name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
-      emailPrefixList: emailPrefixList == freezed
+      emailPrefixList: freezed == emailPrefixList
           ? _value.emailPrefixList
           : emailPrefixList // ignore: cast_nullable_to_non_nullable
               as List<String>?,
-    ));
+    ) as $Val);
   }
 }
 
@@ -76,36 +80,35 @@ abstract class _$$_ShuttleModelCopyWith<$Res>
           _$_ShuttleModel value, $Res Function(_$_ShuttleModel) then) =
       __$$_ShuttleModelCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({int id, String name, List<String>? emailPrefixList});
 }
 
 /// @nodoc
 class __$$_ShuttleModelCopyWithImpl<$Res>
-    extends _$ShuttleModelCopyWithImpl<$Res>
+    extends _$ShuttleModelCopyWithImpl<$Res, _$_ShuttleModel>
     implements _$$_ShuttleModelCopyWith<$Res> {
   __$$_ShuttleModelCopyWithImpl(
       _$_ShuttleModel _value, $Res Function(_$_ShuttleModel) _then)
-      : super(_value, (v) => _then(v as _$_ShuttleModel));
+      : super(_value, _then);
 
-  @override
-  _$_ShuttleModel get _value => super._value as _$_ShuttleModel;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = freezed,
-    Object? name = freezed,
+    Object? id = null,
+    Object? name = null,
     Object? emailPrefixList = freezed,
   }) {
     return _then(_$_ShuttleModel(
-      id: id == freezed
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as int,
-      name: name == freezed
+      name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
-      emailPrefixList: emailPrefixList == freezed
+      emailPrefixList: freezed == emailPrefixList
           ? _value._emailPrefixList
           : emailPrefixList // ignore: cast_nullable_to_non_nullable
               as List<String>?,
@@ -148,22 +151,20 @@ class _$_ShuttleModel implements _ShuttleModel {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_ShuttleModel &&
-            const DeepCollectionEquality().equals(other.id, id) &&
-            const DeepCollectionEquality().equals(other.name, name) &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.name, name) || other.name == name) &&
             const DeepCollectionEquality()
                 .equals(other._emailPrefixList, _emailPrefixList));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(id),
-      const DeepCollectionEquality().hash(name),
+  int get hashCode => Object.hash(runtimeType, id, name,
       const DeepCollectionEquality().hash(_emailPrefixList));
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_ShuttleModelCopyWith<_$_ShuttleModel> get copyWith =>
       __$$_ShuttleModelCopyWithImpl<_$_ShuttleModel>(this, _$identity);
 

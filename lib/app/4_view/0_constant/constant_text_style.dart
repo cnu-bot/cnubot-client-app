@@ -8,3 +8,86 @@ TextStyle kHeadline1 = TextStyle(
   color: kBlackColor,
   fontWeight: FontWeight.w500,
 );
+
+TextStyle kHeadline2 = TextStyle(
+  fontSize: 25.sp,
+  color: kWhiteColor,
+  fontWeight: FontWeight.w800,
+);
+
+// 뉴스
+TextStyle kHeadline3 = TextStyle(
+  fontWeight: FontWeight.w800,
+  fontSize: 20.sp,
+  color: kSecondaryBlue,
+);
+
+// 백마광장, 국제교류본부
+TextStyle kHeadline4 = TextStyle(
+  fontWeight: FontWeight.w600,
+  fontSize: 14.sp,
+  color: kWhiteColor,
+);
+
+// 새소식, 학사정보, ...
+TextStyle kHeadline5 = TextStyle(
+  fontWeight: FontWeight.w600,
+  fontSize: 12.sp,
+  color: kBlue21,
+);
+
+// 게시글 - 작성자
+TextStyle kBody1 = TextStyle(
+  fontWeight: FontWeight.w600,
+  fontSize: 12.sp,
+  color: kGray7B,
+);
+
+// 게시글 - 제목
+TextStyle kBody2 = TextStyle(
+  fontWeight: FontWeight.w800,
+  fontSize: 15.sp,
+  height: 1.2,
+  color: kPrimaryBlue,
+);
+
+// 게시글 - 본문
+TextStyle kBody3 = TextStyle(
+  fontWeight: FontWeight.w400,
+  fontSize: 13.sp,
+  height: 1.2,
+  color: kGray7B,
+);
+
+// 게시글 - 조회수, 날짜
+TextStyle kBody4 = TextStyle(
+  fontWeight: FontWeight.w600,
+  fontSize: 10.sp,
+  color: kGray7B,
+);
+
+TextStyle kBody5 = TextStyle(
+  fontWeight: FontWeight.w600,
+  fontSize: 9.sp,
+  color: kGray7B,
+);
+// 바텀 네비게이션
+TextStyle kBody6 = TextStyle(
+  fontWeight: FontWeight.w600,
+  fontSize: 8.sp,
+  color: kGray8D,
+);
+
+// 바텀 네비게이션
+TextStyle kNavLabel = TextStyle(
+  fontWeight: FontWeight.w600,
+  fontSize: 9.sp,
+  color: kWhiteColor,
+);
+
+// 검색 페이지 메뉴 텍스트
+TextStyle kSearchLabel = TextStyle(
+  fontWeight: FontWeight.w800,
+  fontSize: 18.sp,
+  color: kThirdBlue,
+);

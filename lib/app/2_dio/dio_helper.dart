@@ -3,9 +3,10 @@ import 'package:alice/alice.dart';
 import 'package:cnubot_app/app/1_data/3_environment/environment.dart';
 import 'package:cnubot_app/app/2_dio/constant_dio.dart';
 import 'package:dio/dio.dart';
+import 'package:dio_cache_interceptor/dio_cache_interceptor.dart';
 import 'package:flutter/material.dart';
 
-import '0_interceptor/logging_interceptor.dart';
+import 'package:cnubot_app/app/2_dio/0_interceptor/logging_interceptor.dart';
 
 class DioHelper {
   Dio? dio;
@@ -13,47 +14,62 @@ class DioHelper {
 
   DioHelper() {
     alice = Alice(showNotification: false);
-    var options = BaseOptions(
-        receiveTimeout: ConstantDio.timeout,
-        connectTimeout: ConstantDio.timeout);
+    final options = BaseOptions(
+      receiveTimeout: ConstantDio.timeout,
+      connectTimeout: ConstantDio.timeout,
+    );
 
     options.baseUrl = EnvironmentConstant.config ?? 'test';
     dio = Dio(
       options,
     );
     dio!.interceptors.add(LoggingInterceptors());
-    dio!.interceptors
-        .add(alice!.getDioInterceptor()); //displays logs in notification view
+    dio!.interceptors.add(alice!.getDioInterceptor());
+    dio!.interceptors.add(DioCacheInterceptor(options: dioCacheOptions));
   }
-  Future<Map<String, dynamic>> get(String url,
-      {dynamic param, dynamic options}) async {
-    var response = await dio!.get(
+  Future<List<dynamic>> getList(String url,
+      {dynamic param, bool? refresh}) async {
+    final response = await dio!.get(
       url,
       queryParameters: param,
-      options: options,
+      options: refresh == true
+          ? dioCacheOptions.copyWith(policy: CachePolicy.refresh).toOptions()
+          : null,
+    );
+    return response.data as List<dynamic>;
+  }
+
+  Future<Map<String, dynamic>> get(String url,
+      {dynamic param, bool? refresh}) async {
+    final response = await dio!.get(
+      url,
+      queryParameters: param,
+      options: refresh == true
+          ? dioCacheOptions.copyWith(policy: CachePolicy.refresh).toOptions()
+          : null,
     );
     return response.data as Map<String, dynamic>;
   }
 
   Future<Map<String, dynamic>> post(String url, dynamic body) async {
-    var response = await dio!.post(url, data: body);
+    final response = await dio!.post(url, data: body);
     return response.data as Map<String, dynamic>;
   }
 
   Future<Map<String, dynamic>> patch(String url, dynamic body) async {
-    var response = await dio!.patch(url, data: body);
+    final response = await dio!.patch(url, data: body);
     debugPrint('[Response] ${response.data.runtimeType} ${response.data}');
     return response.data as Map<String, dynamic>;
   }
 
   Future<Map<String, dynamic>> put(String url, dynamic body) async {
-    var response = await dio!.put(url, data: body);
+    final response = await dio!.put(url, data: body);
     debugPrint('[Response] ${response.data.runtimeType} ${response.data}');
     return response.data as Map<String, dynamic>;
   }
 
   Future<Map<String, dynamic>> delete(String url, dynamic body) async {
-    var response = await dio!.delete(url, data: body);
+    final response = await dio!.delete(url, data: body);
     debugPrint('[Response] ${response.data.runtimeType} ${response.data}');
     return response.data as Map<String, dynamic>;
   }
@@ -65,15 +81,8 @@ class DioHelper {
   }
 }
 
-/// Api Response codes
-class DioResponseCode {
-  static const int success200 = 200;
-  static const int success201 = 201;
-  static const int error400 = 400;
-  static const int error499 = 499;
-  static const int error401 = 201;
-  static const int error404 = 201;
-  static const int error500 = 500;
-  static const int internetUnavailable = 999;
-  static const int unknown = 533;
-}
+CacheOptions dioCacheOptions = CacheOptions(
+  store: MemCacheStore(),
+  hitCacheOnErrorExcept: [401, 403],
+  maxStale: const Duration(hours: 6),
+);

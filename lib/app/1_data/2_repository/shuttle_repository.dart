@@ -6,7 +6,8 @@ class ShuttleRepository {
   ShuttleRepository({required this.provider});
 
   Future<List<ShuttleModel>> getShuttleModelList(
-      Map<String, dynamic> paramMap) async {
+    Map<String, dynamic> paramMap,
+  ) async {
     return provider.getShuttleModelList(paramMap);
   }
 }
